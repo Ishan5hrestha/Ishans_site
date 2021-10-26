@@ -1,257 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script defer src="theme.js"></script>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Custom Title Bar -->
+  <title>Ishan Shrestha</title>
+
+  <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+	<!-- Third party plugin CSS-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+
+  <!-- Theme CSS -->
+  <link href="css/creative.css" rel="stylesheet">
+
+  <!-- Index CSS -->
+  <link href="css/index.css" rel="stylesheet">
+
+  <!-- Custom favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- Google Analytics Tracking Tag. Track how people access my site and such.
+       (assuming they don't block ads or whatever from Google) -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-68657454-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+	<!-- 
+	These are Open Graph Metadata tags, which are used by Facebook, LinkedIn and 
+	other social media sites to determine certain metadata like URLs, Images to
+	display, etc. More information can be found on the Open Graph website, or on 
+	this Facebook Developers page:
+
+	https://ogp.me/
+	https://developers.facebook.com/docs/sharing/webmasters/#markup
+	-->
+	<meta property="og:url"                content="https://downing.io/" />
+	<meta name="image" property="og:image" content="https://raw.githubusercontent.com/JasonD94/jasond94.github.io/master/img/header.jpg" />
+	<meta property="og:image:alt"          content="A Deep Dreamed view of the Middlesex Fells Reservoir in Medford, MA" />
+	<meta property="g:locale"              content="en_US" />
+	<meta property="og:type"               content="website" />
+	<meta property="og:author"             content="Jason Downing" />
+	<meta property="og:title"              content="Jason Downing's Personal Website" />
+	<meta property="og:description"        content="This is Jason Downing's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff" />
+	
+	<meta name="description" content="This is Jason Downing's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff">
+
 </head>
 
-<body>
-  
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      <li class="logo">
-        <a href="javascript:location.reload();" class="nav-link">
-          <span class="link-text logo-text">Ishan's</span>
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="angle-double-right"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-        </a>
-      </li>
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
 
-      <li class="nav-item">
-        <a href='javascript:document.getElementById("Lekheko_kuraharu").innerHTML = blender' class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="cat"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-cat fa-w-16 fa-9x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M448 96h-64l-64-64v134.4a96 96 0 0 0 192 0V32zm-72 80a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm80 0a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm-165.41 16a204.07 204.07 0 0 0-34.59 2.89V272l-43.15-64.73a183.93 183.93 0 0 0-44.37 26.17L192 304l-60.94-30.47L128 272v-80a96.1 96.1 0 0 0-96-96 32 32 0 0 0 0 64 32 32 0 0 1 32 32v256a64.06 64.06 0 0 0 64 64h176a16 16 0 0 0 16-16v-16a32 32 0 0 0-32-32h-32l128-96v144a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V289.86a126.78 126.78 0 0 1-32 4.54c-61.81 0-113.52-44.05-125.41-102.4z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M376 144a16 16 0 1 0 16 16 16 16 0 0 0-16-16zm80 0a16 16 0 1 0 16 16 16 16 0 0 0-16-16zM131.06 273.53L192 304l-23.52-70.56a192.06 192.06 0 0 0-37.42 40.09zM256 272v-77.11a198.62 198.62 0 0 0-43.15 12.38z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Armory 3D</span>
-        </a>
-      </li>
+      <!-- Updated with latest Creative -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Jason Downing</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" 
+              data-toggle="collapse" data-target="#navbarResponsive" 
+              aria-controls="navbarResponsive" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <li class="nav-item">
-        <a href="blender.html" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="alien-monster"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M560,128H528a15.99954,15.99954,0,0,0-16,16v80H480V176a15.99954,15.99954,0,0,0-16-16H416V96h48a16.00079,16.00079,0,0,0,16-16V48a15.99954,15.99954,0,0,0-16-16H432a15.99954,15.99954,0,0,0-16,16V64H368a15.99954,15.99954,0,0,0-16,16v48H224V80a15.99954,15.99954,0,0,0-16-16H160V48a15.99954,15.99954,0,0,0-16-16H112A15.99954,15.99954,0,0,0,96,48V80a16.00079,16.00079,0,0,0,16,16h48v64H112a15.99954,15.99954,0,0,0-16,16v48H64V144a15.99954,15.99954,0,0,0-16-16H16A15.99954,15.99954,0,0,0,0,144V272a16.00079,16.00079,0,0,0,16,16H64v80a16.00079,16.00079,0,0,0,16,16h48v80a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V432a15.99954,15.99954,0,0,0-16-16H192V384H384v32H336a15.99954,15.99954,0,0,0-16,16v32a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V384h48a16.00079,16.00079,0,0,0,16-16V288h48a16.00079,16.00079,0,0,0,16-16V144A15.99954,15.99954,0,0,0,560,128ZM224,320H160V224h64Zm192,0H352V224h64Z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M160,320h64V224H160Zm192-96v96h64V224Z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Blender</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a href="reactjs.html" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="space-station-moon-alt"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">React JS</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a href="AI.html" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="space-shuttle"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 512"
-            class="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M32 416c0 35.35 21.49 64 48 64h16V352H32zm154.54-232h280.13L376 168C243 140.59 222.45 51.22 128 34.65V160h18.34a45.62 45.62 0 0 1 40.2 24zM32 96v64h64V32H80c-26.51 0-48 28.65-48 64zm114.34 256H128v125.35C222.45 460.78 243 371.41 376 344l90.67-16H186.54a45.62 45.62 0 0 1-40.2 24z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M592.6 208.24C559.73 192.84 515.78 184 472 184H186.54a45.62 45.62 0 0 0-40.2-24H32c-23.2 0-32 10-32 24v144c0 14 8.82 24 32 24h114.34a45.62 45.62 0 0 0 40.2-24H472c43.78 0 87.73-8.84 120.6-24.24C622.28 289.84 640 272 640 256s-17.72-33.84-47.4-47.76zM488 296a8 8 0 0 1-8-8v-64a8 8 0 0 1 8-8c31.91 0 31.94 80 0 80z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">AI</span>
-        </a>
-      </li>
-
-      <li class="nav-item" id="themeButton">
-        <a href="#" class="nav-link">
-          <svg
-            class="theme-icon"
-            id="lightIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="moon-stars"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <svg
-            class="theme-icon"
-            id="solarIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="sun"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-sun fa-w-16 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <svg
-            class="theme-icon"
-            id="darkIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="sunglasses"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            class="svg-inline--fa fa-sunglasses fa-w-18 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M574.09 280.38L528.75 98.66a87.94 87.94 0 0 0-113.19-62.14l-15.25 5.08a16 16 0 0 0-10.12 20.25L395.25 77a16 16 0 0 0 20.22 10.13l13.19-4.39c10.87-3.63 23-3.57 33.15 1.73a39.59 39.59 0 0 1 20.38 25.81l38.47 153.83a276.7 276.7 0 0 0-81.22-12.47c-34.75 0-74 7-114.85 26.75h-73.18c-40.85-19.75-80.07-26.75-114.85-26.75a276.75 276.75 0 0 0-81.22 12.45l38.47-153.8a39.61 39.61 0 0 1 20.38-25.82c10.15-5.29 22.28-5.34 33.15-1.73l13.16 4.39A16 16 0 0 0 180.75 77l5.06-15.19a16 16 0 0 0-10.12-20.21l-15.25-5.08A87.95 87.95 0 0 0 47.25 98.65L1.91 280.38A75.35 75.35 0 0 0 0 295.86v70.25C0 429 51.59 480 115.19 480h37.12c60.28 0 110.38-45.94 114.88-105.37l2.93-38.63h35.76l2.93 38.63c4.5 59.43 54.6 105.37 114.88 105.37h37.12C524.41 480 576 429 576 366.13v-70.25a62.67 62.67 0 0 0-1.91-15.5zM203.38 369.8c-2 25.9-24.41 46.2-51.07 46.2h-37.12C87 416 64 393.63 64 366.11v-37.55a217.35 217.35 0 0 1 72.59-12.9 196.51 196.51 0 0 1 69.91 12.9zM512 366.13c0 27.5-23 49.87-51.19 49.87h-37.12c-26.69 0-49.1-20.3-51.07-46.2l-3.12-41.24a196.55 196.55 0 0 1 69.94-12.9A217.41 217.41 0 0 1 512 328.58z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M64.19 367.9c0-.61-.19-1.18-.19-1.8 0 27.53 23 49.9 51.19 49.9h37.12c26.66 0 49.1-20.3 51.07-46.2l3.12-41.24c-14-5.29-28.31-8.38-42.78-10.42zm404-50l-95.83 47.91.3 4c2 25.9 24.38 46.2 51.07 46.2h37.12C489 416 512 393.63 512 366.13v-37.55a227.76 227.76 0 0 0-43.85-10.66z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Themes</span>
-        </a>
-      </li>
-    </ul>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#work">Work</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#funstuff">Fun</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#githubb">GitHub</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="img/resume.pdf">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <main>
-    <h1>Ishan's .com</h1>
-    <script type="text/javascript">
-      var blender = "blender ko barema lekheko"
+ 
+  <header class="masthead text-center text-black d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong>Ishan Shrestha</strong>
+          </h1>
+          <hr class="divider my-4" />
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <p class="text-faded text-black mb-5">Game Developer. Data Science Enthusiast. Machine Learning Novice.</p>
+          <p class="text-italic font-weight-bold mb-5">
+            Computer Engineer</a>
+          </p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More!</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Education Section -->
+  <section class="page-section bg-primary">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mx-auto text-center mb-4">
+          <h2 class="section-heading text-white" id="about">Education</h2>
+          <hr class="divider light my-4" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
+          <i class="fa fa-4x fa-id-card-o text-faded sr-icons"></i>
+          <h3 class="text-white">Degree</h3>
+          <p class="text-faded">Bachelor of Computer Engineering<br/>
+          <a class="text-white-link" href="https://www.uml.edu/" class="text-blue">KEC, Kalimati</a></p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 text-center div-padding-fix mb-4">
+          <i class="fa fa-4x fa-graduation-cap text-faded sr-icons"></i>
+          <h3 class="text-white">Graduation</h3>
+          <p class="text-faded">Graduated with First Division</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
+          <i class="fa fa-4x fa-code text-faded sr-icons"></i>
+          <h3 class="text-white">Languages</h3>
+          <p class="text-faded no-margin">Python, C / C++, Java, JavaScript, </p>
+          <p class="text-faded">HTML5 (HTML/CSS/JS)</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
+          <i class="fa fa-4x fa-file-code-o text-faded sr-icons"></i>
+          <h3 class="text-white">Skills</h3>
+					<p class="text-faded">HTML5 / CSS / JS Front end</p>
+          <p class="text-faded no-margin">Django Back end</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#funstuff">Wait There's More!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section. -->
+  <!--
+  <section class="page-section">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading" id="work">Work</h2>
+          <hr class="divider my-4" />
+        </div>
+	      <div class="col-sm-12 text-center mt-4 mb-4">
+          <i class="fa fa-4x fa-rocket text-primary sr-icons"></i>
+          <h3 class="mt-4 mb-4">Software Engineer II</h3>
+          <p class="text-muted">August 2019 to Present: <span class="RtnRed">Raytheon</span></p>
+        </div>
+        <div class="col-lg-3 col-sm-6 text-center">
+          <i class="fa fa-4x fa-fighter-jet text-primary sr-icons"></i>
+          <h3 class="mt-4 mb-4">System Engineer II</h3>
+          <p class="text-muted">April 2018 to August 2019: BAE Systems</p>
+        </div>
+        <div class="col-lg-3 col-sm-6 text-center">
+          <i class="fa fa-4x fa-truck text-primary sr-icons"></i>
+          <h3 class="mt-4 mb-4">Software Developer</h3>
+          <p class="text-muted">July 2017 to April 2018: Creative Logistics Solutions (CLS)</p>
+        </div>
+        <div class="col-lg-3 col-sm-6 text-center">
+          
+          <i class="fa fa-4x fa-android text-primary sr-icons"></i>
+          <i class="fa fa-4x fa-server text-primary sr-icons ml-4"></i>
+          <h3 class="mt-4 mb-4">Technical Intern</h3>
+          <p class="text-muted mb-4">Summer 2015: Fidelity Institutional (FI)</p>
+          <p class="text-muted mb-5">Summer 2016: Fidelity Personal Investing (PI) </p>
+        </div>
+        <div class="col-lg-3 col-sm-6 text-center">
+          <i class="fa fa-4x fa-pied-piper text-primary sr-icons"></i>
+          <h3 class="mt-4 mb-4">Research Assistant</h3>
+          <p class="text-muted">Summer 2014: UMass Lowell's <br/>Engaging Computing Group<br/> Research Lab</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#funstuff">
+        Boring, show me some fun stuff!</a>
+      </div>
+    </div>
+  </section>
+-->
+  
+  <!-- Some fun stuff, leave the boring code for last. -->
+  <section class="page-section bg-green">
+    <div class="container-fluid">
+      <div class="row images-vcenter">
+			
+	      <div class="col-lg-12 pb-3 text-center">
+          <h2 class="section-heading" id="funstuff">Fun Stuff</h2>
+          <hr class="divider black my-4" />
+        </div>
+			
+	      <!-- Fun stuff includes links to Mountain Biking, Skiing and Spotify playlists -->
+				<div class="col-lg-3 col-sm-6 text-center">
+          <a class="href-black" href="https://www.artstation.com/mutton">
+					<img src="img/portfolio/thumbnails/dreams.jpg" 
+						   class="img-fluid images-border images-size-mtb"
+						   alt="Deep Dreams">
+					</a>
+          <h3 class="mt-4 mb-4">3D Modelling</h3>
+        </div>
+				
+	      <div class="col-lg-3 col-sm-6 text-center">
+          <a class="href-black" href="https://300.itch.io/">
+					<img src="img/portfolio/thumbnails/mtn-biking.jpg" 
+						   class="img-fluid images-border images-size-mtb"
+						   alt="Mountain Biking">
+					</a>
+          <h3 class="mt-4 mb-4">Game Making</h3>
+        </div>
+			<!--
+        <div class="col-lg-3 col-sm-6 text-center">
+          <a class="href-black" href="https://downing.io/Skiing/">
+            <img src="img/portfolio/thumbnails/skiing.jpg" 
+                 class="img-fluid images-border-skiing images-size-skiing" 
+                 alt="SKIING!">
+          </a>
+          <h3 class="mt-4 mb-4">SKIING!</h3>
+        </div>
+				
+        <div class="col-lg-3 col-sm-6 text-center">
+          <a class="href-black" href="https://downing.io/Spotify/">
+            <img src="img/portfolio/thumbnails/spotify.png" 
+                 class="img-fluid"
+                 alt="Spotify Playlists!">
+          </a>
+          <h3 class="mt-4 mb-4">Spotify Playlists!</h3>
+        </div>
+				-->
+
+				
+     </div>
+	    
+     <div class="text-center">
+        <a class="btn btn-black btn-xl js-scroll-trigger" href="#githubb">
+        Cool, show me the <&nbsp;&frasl;&nbsp;CODE&nbsp;></a>
+     </div>
+   </div>
+  </section>
+
+  <!-- GitHub Section -->
+  <div class="page-section min-padding-top bg-dark" id="github">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+
+          <!-- Tweaking this part so the title links straight to my GitHub
+							page, without adding the silly extra "CLICK THIS ICON" text that was
+							there before. -->
+          <h2 class="section-heading" id="githubb">
+            <a class="text-white-link" href="https://github.com/Ishan5hrestha">
+						  GitHub: Ishan5hrestha
+              <i class="fa fa-1x fa-github-square" style="color:white"></i>
+            </a>
+          </h2>
+					<hr class="divider light my-4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub links below -->
+    <div class="container-fluid p-0">  <!-- p-0 makes the images go edge to edge (no padding) -->
+      <div class="row no-gutters">
+
+        <!--
+              Currently these link to:
+							Deep Dreams <-> Car Scraping Data              <-> Loan Repayment
+              downing.io  <-> Scrabble (GUI I Final Project) <-> Racket Weather
+         -->
+
+				<!-- Some code I wrote to download Deep Dreams off of DeepDreamGenerator -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/JasonD94/DeepDreams">
+            
+						<!--  Same photo as the header, but resized. -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/deep-dreams.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+								  Deep Dreams
+								</div>
+                <div class="project-name">
+								  Python code for downloading all my 
+									Deep Dreams off of DreamDreamGenerator
+							  </div>
+              </div>
+            </div>
+          </a>
+        </div>
+				
+				<!-- Some code I Python modified from Reddit for scraping car data -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/JasonD94/predicting-car-price-from-scraped-data">
+            
+						<!--  Same photo as the header, but resized. -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/car-data-scraping.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">Car Data Scraping</div>
+                <div class="project-name">
+								  Python code for scraping Car data
+								</div>
+              </div>
+            </div>
+          </a>
+        </div>
+				
+				<!-- Loan Repayment Site using Vue.js -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/JasonD94/Loan-Repayment">
+            
+						<!--  Same photo as the header, but resized. -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/loan-repayment.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">Loan Repayment</div>
+                <div class="project-name">
+								  Loan Repayment Math, focusing on Student Loan Debt.
+								</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Source code for this website => downing.io -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/JasonD94/jasond94.github.io">
+            
+						<!--  Same photo as the header, but resized. -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/downing-io.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">downing.io</div>
+                <div class="project-name">Source code for this personal website</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Source code for GUI I last assignment (Scrabble) -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/JasonD94/scrabble">
+            <!--  Thumbnail from Wikipedia
+                  URL: https://upload.wikimedia.org/wikipedia/commons/5/5d/Scrabble_game_in_progress.jpg
+            -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/scrabble.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Scrabble
+                </div>
+                <div class="project-name">
+                  Full implementation of the Scrabble board game.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Source code for OPL Project (Racket Weather) -->
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="https://github.com/oplS16projects/Racket-Weather">
+            <!-- Thumbnail from gannett-cdn.com
+                 URL: http://www.gannett-cdn.com/-mm-/3526533239800dac0c978150377d099025f1e52c/c=52-700-4303-3102&r=x1683&c=3200x1680/local/-/media/USATODAY/None/2014/10/03/1412368123000-Mesostorm-Lightning.jpg -->
+            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/racket-weather.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  Racket Weather
+                </div>
+                <div class="project-name">
+                  OPL Project. Visualizations in Racket using data from
+                  the OpenWeatherMap API.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+				
+      </div>
+			
+			<div class="text-center p-4">
+        <a class="btn btn-black btn-xl js-scroll-trigger" href="#contact">
+        Contact Ishan
+				</a>
+      </div>
+			
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <section class="min-padding" id="contact">
+    <div class="container">
+    
+      <!-- Contact Jason Row -->
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">
+          
+          <!-- Attempting to avoid spam by removing @ and the dot in my domain -->
+            Contact Ishan</h2>
+          <hr class="divider black my-4" />
+          <p>If you have an interesting opportunity in the <strong>Boston area</strong> (Jason is <strong>not</strong> interested in relocating), you
+            can send (no spam plz 🙁) him a message using the form below.</p>
+					
+					<p>Please be sure to provide the company name and JD if you expect to hear back from Jason. 
+					He's gotten hundreds of messages (<a href="https://github.com/JasonD94/LinkedIn-Data-Formater">proof</a>) and won't respond to junk mail. 🙃</p>
+          
+          <!-- Really avoiding spam by sending emails to the spam box
+               Docs URL: https://formspree.io/ 
+               Also, Bootstrap forms: https://getbootstrap.com/docs/3.3/css/#forms -->
+	        <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+							!!!!!!!     CHANGE THE FORMSPREE ENDPOINT TO YOUR OWN EMAIL IF YOU FORK THIS REPO. MUCH THANKS     !!!!!!!          
+							!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					-->
+          <form action="https://formspree.io/mdopovkv" method="POST" class="form-horizontal" role="form">
+            <!-- Need a name, reply to email, and a message -->
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your message" class="form-control" required></textarea>
+            </div>
+            <!-- Hidden elements here -->
+            <input type="hidden" name="_subject" value="New email from Contact Me Form!" class="form-control">
+            <input type="hidden" name="_next" value="thanks.html" />
+            <!-- Submit button -->
+            <div class="form-group">
+              <input type="submit" value="Email Ishan" class="btn btn-primary btn-xl">
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p>You can also find his personal email, LinkedIn and GitHub below too.</p>
+        </div>
+      </div>
+      
+      <!-- Email, LinkedIn, and GitHub links -->
+      <div class="row">
+      
+			  <!-- Removed email link, because spam bots just figure it out and I get hit with 10s of thousands of
+              requests a month so... not doing that. If you can read this, just open up my resume ;P      -->
+        <div class="col-4 col-sm-4 col-lg-2 offset-lg-3 text-center">
+				  <a href="img/resume.pdf">
+						<i class="fa fa-envelope fa-4x sr-icons"></i>
+					</a>
+					<a href="img/resume.pdf">
+						<p>Email - <span class="text-blue text-italic font-weight-bold">see resume</span></p>
+					</a>
+        </div>
+        
+        <div class="col-4 col-sm-4 col-lg-2 text-center">
+          <a href="https://www.linkedin.com/in/jasonpdowning">
+            <i class="fa fa-linkedin-square fa-4x sr-icons"></i>
+          </a>
+          <p><a href="https://www.linkedin.com/in/ishan-shrestha-8693b2172/" class="text-blue">LinkedIn</a></p>
+        </div>
+        
+        <div class="col-4 col-sm-4 col-lg-2 text-center">
+          <a href="https://github.com/Ishan5hrestha">
+            <i class="fa fa-github-square fa-4x sr-icons"></i>
+          </a>
+          <p><a href="https://github.com/Ishan5hrestha" class="text-blue">GitHub</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    </script>
-
-    <p id="Lekheko_kuraharu">
-     Welcome.<br>
-     It will take some time.<br>
-     <b>Huwaaa</b>
+  <div class="container">
+    <p class="text-center text-muted text-small mb-1">
+      Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>. All rights reserved.
+      Powered by <a href="http://www.getbootstrap.com/" class="text-blue">Bootstrap</a>.
     </p>
-  </main>
+    <p class="text-center text-muted text-small">
+      Source on <a href="https://github.com/JasonD94/jasond94.github.io" class="text-blue">GitHub</a>.
+      Theme based on the
+      <a href="http://startbootstrap.com/template-overviews/creative/" class="text-blue">Creative Bootstrap Theme</a>
+      by <a href="http://startbootstrap.com/" class="text-blue">Start Bootstrap</a>.
+    </p>
+		<br/>
+  </div>
+
+  <!-- 2/20/2021: Updated with the latest Start Bootstrap code, so following what they did.
+							  Exception: the slim jquery seems to cause console errors. The full jquery gets rid of that,
+								and it seems like the scrolling works too. Weird.
+       https://github.com/BlackrockDigital/startbootstrap-creative  -->
+       
+ <!-- Bootstrap core JS-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+	<!-- Core theme JS-->
+  <script src="js/creative.js"></script>
+	
+	<!-- Automagically update the copyright year - why did I ever hardcode that? RIP lazy 2015 - 2020 me. -->
+	<script>
+		document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+	</script>
+  
 </body>
+</html>
