@@ -1,4 +1,3 @@
-@echo off
 set /p message=Commit Message?:
 title Git Push
 git init
