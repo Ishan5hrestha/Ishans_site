@@ -1,524 +1,2239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  <!-- Custom Title Bar -->
-  <title>Ishan Shrestha</title>
+    <!-- Custom Title Bar -->
+    <title>Ishan Shrestha</title>
 
-  <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
-	<!-- Google fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-	<!-- Third party plugin CSS-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
 
-  <!-- Theme CSS -->
-  <link href="css/creative.css" rel="stylesheet">
+    <!-- Google fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Index CSS -->
-  <link href="css/index.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              dark: {
+                DEFAULT: "#0d1117", // Darker blue-black
+                secondary: "#161b22", // Dark blue
+                accent: "#1f2937", // Blue-gray
+              },
+              accent: {
+                DEFAULT: "#1E40AF", // Strong blue
+                light: "#3B82F6", // Lighter blue
+                dark: "#1E3A8A", // Darker blue
+              },
+            },
+          },
+        },
+      };
+    </script>
 
-  <!-- Custom favicon -->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Custom favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-  <!-- Google Analytics Tracking Tag. Track how people access my site and such.
-       (assuming they don't block ads or whatever from Google) -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-68657454-1', 'auto');
-    ga('send', 'pageview');
-  </script>
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
-	<!-- 
-	These are Open Graph Metadata tags, which are used by Facebook, LinkedIn and 
-	other social media sites to determine certain metadata like URLs, Images to
-	display, etc. More information can be found on the Open Graph website, or on 
-	this Facebook Developers page:
+    <!-- Google Analytics Tracking Tag -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-68657454-1", "auto");
+      ga("send", "pageview");
+    </script>
 
-	https://ogp.me/
-	https://developers.facebook.com/docs/sharing/webmasters/#markup
-	-->
-	<meta property="og:url"                content="https://ishans.com.np/" />
-	<meta property="og:image:alt"          content="A Deep Dreamed view of the Middlesex Fells Reservoir in Medford, MA" />
-	<meta property="g:locale"              content="en_US" />
-	<meta property="og:type"               content="website" />
-	<meta property="og:author"             content="Ishan Shrestha" />
-	<meta property="og:title"              content="Ishan's Personal Website" />
-	<meta property="og:description"        content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff" />
-	
-	<meta name="description" content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff">
+    <!-- Open Graph Metadata tags -->
+    <meta property="og:url" content="https://ishans.com.np/" />
+    <meta
+      property="og:image:alt"
+      content="A Deep Dreamed view of the Middlesex Fells Reservoir in Medford, MA"
+    />
+    <meta property="g:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="Ishan Shrestha" />
+    <meta property="og:title" content="Ishan's Personal Website" />
+    <meta
+      property="og:description"
+      content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
+    <meta
+      name="description"
+      content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
 
-</head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+        background-color: #0d1117; /* Darker blue-black */
+        color: #f9fafb;
+        width: 100vw;
+        height: 100vh;
+      }
 
-<body id="page-top">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
+      .gradient-text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(
+          45deg,
+          #1e40af,
+          #38bdf8
+        ); /* Blue gradient */
+      }
 
-      <!-- Updated with latest Creative -->
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Ishan Shrestha</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" 
-              data-toggle="collapse" data-target="#navbarResponsive" 
-              aria-controls="navbarResponsive" aria-expanded="false" 
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      .section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#work">Work</a>
-          </li>
-					<li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#funstuff">Fun</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#githubb">GitHub</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="img/resume.pdf">Resume</a>
-          </li>
-        </ul>
+      /* Home section specific style - full height, centered */
+      #home {
+        overflow: hidden;
+        align-items: center;
+      }
+
+      /* Non-home sections - allow scrolling */
+      .section:not(#home) {
+        overflow-y: auto;
+        align-items: flex-start;
+        padding-top: 72px; /* Space for the navbar */
+        padding-bottom: 40px;
+      }
+
+      .section.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        z-index: 10;
+      }
+
+      /* Remove the content-container height restriction */
+      .content-container {
+        overflow-y: visible;
+        padding-right: 0;
+        width: 100%;
+      }
+
+      /* Add responsive sizing for the business card */
+      @media (max-height: 800px) {
+        .business-card {
+          transform: scale(0.9);
+          margin-top: -20px;
+        }
+      }
+
+      @media (max-height: 700px) {
+        .business-card {
+          transform: scale(0.85);
+          margin-top: -30px;
+        }
+      }
+
+      .business-card {
+        position: relative;
+        max-width: 500px;
+        width: 90%;
+        background: linear-gradient(
+          135deg,
+          #0f172a,
+          #1e293b
+        ); /* Blue gradient background */
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(59, 130, 246, 0.1); /* Blue glow */
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+      }
+
+      .business-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #1e40af,
+          #38bdf8
+        ); /* Blue gradient */
+      }
+
+      .card-shine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.05) 0%,
+          rgba(255, 255, 255, 0) 40%,
+          rgba(255, 255, 255, 0) 60%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        pointer-events: none;
+      }
+
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          45deg,
+          #1e40af,
+          #38bdf8
+        ); /* Blue gradient */
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-active::after {
+        width: 100%;
+      }
+
+      .portfolio-item {
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .content-container {
+        max-height: 85vh;
+        overflow-y: auto;
+        padding-right: 15px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(124, 58, 237, 0.5) rgba(45, 45, 45, 0.5);
+      }
+
+      .content-container::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .content-container::-webkit-scrollbar-track {
+        background: rgba(45, 45, 45, 0.5);
+        border-radius: 10px;
+      }
+
+      .content-container::-webkit-scrollbar-thumb {
+        background-color: rgba(124, 58, 237, 0.5);
+        border-radius: 10px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes floatAnimation {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .float {
+        animation: floatAnimation 3s ease-in-out infinite;
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      .animate-slide-in-right {
+        animation: slideInRight 0.6s ease forwards;
+      }
+
+      .animate-slide-in-left {
+        animation: slideInLeft 0.6s ease forwards;
+      }
+
+      .animate-delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .animate-delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .animate-delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      .animate-delay-4 {
+        animation-delay: 0.4s;
+      }
+
+      /* Button and Form Styles */
+      .custom-btn {
+        background: linear-gradient(to right, #7c3aed, #6d28d9);
+        color: white;
+        border-radius: 9999px;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .custom-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #6d28d9, #5b21b6);
+        transition: all 0.4s ease;
+        z-index: -1;
+      }
+
+      .custom-btn:hover::before {
+        left: 0;
+      }
+
+      .custom-input {
+        background-color: #2d2d2d;
+        border: 1px solid #3d3d3d;
+        border-radius: 8px;
+        padding: 12px 16px;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .custom-input:focus {
+        outline: none;
+        border-color: #7c3aed;
+        box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+      }
+
+      /* Embossed effect for business card */
+      .embossed-text {
+        color: transparent;
+        background-color: #fff;
+        text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        letter-spacing: 0.05em;
+      }
+
+      /* Quote styling */
+      .warhammer-quote {
+        position: relative;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 1rem;
+        background: rgba(30, 58, 138, 0.1);
+        border-left: 3px solid #3b82f6;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+      }
+
+      .warhammer-quote::before {
+        content: '"';
+        position: absolute;
+        top: 0;
+        left: 0.5rem;
+        font-size: 2rem;
+        color: rgba(59, 130, 246, 0.3);
+        font-family: serif;
+      }
+
+      /* Add metallic effect for card */
+      .metallic-emboss {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.05) 25%,
+          rgba(0, 0, 0, 0.05) 50%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .metallic-emboss::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Add shadow glow for blue theme */
+      .shadow-glow {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5) !important;
+      }
+
+      .shadow-glow-sm {
+        box-shadow: 0 0 8px rgba(59, 130, 246, 0.5) !important;
+      }
+
+      /* Update the nav-active class to include an underline */
+      .nav-active {
+        color: white !important;
+        position: relative;
+      }
+
+      .nav-active::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #1e40af, #38bdf8);
+        border-radius: 2px;
+      }
+
+      /* Update for mobile menu active links */
+      #mobileMenu .nav-active {
+        color: white !important;
+        border-left: 3px solid #3b82f6;
+        padding-left: 12px;
+        background-color: rgba(59, 130, 246, 0.1);
+      }
+
+      #mobileMenu .nav-active::after {
+        display: none;
+      }
+
+      /* Experience section animations and transitions */
+      .role-content {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+      }
+
+      .role-tab {
+        transition: all 0.2s ease-in-out;
+      }
+
+      #previous-content {
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in-out;
+        overflow: hidden;
+      }
+
+      /* Hover effect for experience items */
+      .experience-item:hover {
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+      }
+
+      /* Timeline styling */
+      .timeline-dot::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3b82f6, #1e40af);
+        left: -10px;
+        top: 8px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#121212]">
+    <!-- Fixed Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-dark-secondary/95 z-50 backdrop-blur-sm border-b border-blue-900/20 py-5"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="#"
+            id="logo-link"
+            class="text-xl md:text-2xl font-bold gradient-text"
+            >Ishan Shrestha</a
+          >
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menuToggle" class="text-white focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link nav-active text-white transition-colors duration-300"
+              data-section="home"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="services"
+              >Services</a
+            >
+            <a
+              href="#experience"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="experience"
+              >Experience</a
+            >
+            <a
+              href="#funstuff"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="funstuff"
+              >Fun</a
+            >
+            <a
+              href="#github"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="github"
+              >GitHub</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="contact"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden pt-4 pb-2">
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#home"
+              class="text-white transition-colors duration-300"
+              data-section="home"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="services"
+              >Services</a
+            >
+            <a
+              href="#experience"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="experience"
+              >Experience</a
+            >
+            <a
+              href="#funstuff"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="funstuff"
+              >Fun</a
+            >
+            <a
+              href="#github"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="github"
+              >GitHub</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              data-section="contact"
+              >Contact</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
- 
-  <header class="masthead text-center text-black d-flex">
-    <div class="container my-auto">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h1 class="text-uppercase">
-            <strong>Ishan Shrestha</strong>
-          </h1>
-          <hr class="divider my-4" />
-        </div>
-        <div class="col-lg-8 mx-auto">
-          <p class="text-faded text-black mb-5">Software Engineer, Game Dev, Machine Learning Enthusiast</p>
-          <p class="text-italic font-weight-bold mb-5">
-            Computer Engineer</a>
-          </p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Take a route!</a>
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Home Section (Business Card) -->
+    <section id="home" class="section active">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
 
-  <!-- Education Section -->
-  <section class="page-section bg-primary">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 mx-auto text-center mb-4">
-          <h2 class="section-heading text-white" id="about">Education</h2>
-          <hr class="divider light my-4" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
-          <i class="fa fa-4x fa-id-card-o text-faded sr-icons"></i>
-          <h3 class="text-white">Degree</h3>
-          <p class="text-faded">Bachelor of Computer Engineering<br/>
-          <a class="text-white-link" href="" class="text-blue">KEC, Kalimati</a></p>
-        </div>
+      <div class="w-full h-full flex items-center justify-center px-4">
+        <div class="business-card group">
+          <div class="card-shine"></div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 text-center div-padding-fix mb-4">
-          <i class="fa fa-4x fa-graduation-cap text-faded sr-icons"></i>
-          <h3 class="text-white">Graduation</h3>
-          <p class="text-faded">Graduated with First Division</p>
-        </div>
+          <!-- Profile Image -->
+          <div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+            <div
+              class="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-glow"
+            >
+              <img
+                src="https://avatars.githubusercontent.com/u/45944370?v=4"
+                alt="Ishan Shrestha"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
-          <i class="fa fa-4x fa-code text-faded sr-icons"></i>
-          <h3 class="text-white">Languages</h3>
-          <p class="text-faded no-margin">Python, C / C++, Java, JavaScript, </p>
-          <p class="text-faded">HTML5 (HTML/CSS/JS)</p>
-        </div>
+            <div class="warhammer-quote mb-4">
+              "Blessed is the mind too small for doubt."
+            </div>
+          </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 text-center mb-4">
-          <i class="fa fa-4x fa-file-code-o text-faded sr-icons"></i>
-          <h3 class="text-white">Skills</h3>
-					<p class="text-faded">HTML5 / CSS / JS Front end</p>
-          <p class="text-faded no-margin">Django Back end</p>
-        </div>
-      </div>
+          <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-2 tracking-tight embossed-text">
+              Ishan Shrestha
+            </h1>
+            <div
+              class="h-1 w-16 bg-gradient-to-r from-blue-700 to-blue-400 mb-3"
+            ></div>
+            <p class="text-xl text-blue-300 mb-3">Software Merchant</p>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Delivering digital solutions that matter. I source the software
+              you need by any means necessary.
+            </p>
+          </div>
 
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#funstuff">Wait There's More!</a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="space-y-3 mb-8">
+            <div
+              class="metallic-emboss group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center mr-3"
+                >
+                  <i class="fa fa-envelope text-blue-200"></i>
+                </div>
+                <a
+                  href="mailto:ishanshrestha@gmail.com"
+                  class="text-gray-300 hover:text-white transition-colors"
+                >
+                  ishanshrestha@gmail.com
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center mr-3"
+                >
+                  <i class="fa fa-github text-blue-200"></i>
+                </div>
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors"
+                >
+                  github.com/Ishan5hrestha
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center mr-3"
+                >
+                  <i class="fa fa-linkedin text-blue-200"></i>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors"
+                >
+                  linkedin.com/in/ishanshrestha
+                </a>
+              </div>
+            </div>
+          </div>
 
-  <!-- Work Experience Section. -->
-  <!--
-  <section class="page-section">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading" id="work">Work</h2>
-          <hr class="divider my-4" />
-        </div>
-	      <div class="col-sm-12 text-center mt-4 mb-4">
-          <i class="fa fa-4x fa-rocket text-primary sr-icons"></i>
-          <h3 class="mt-4 mb-4">Software Engineer II</h3>
-          <p class="text-muted">August 2019 to Present: <span class="RtnRed">Raytheon</span></p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center">
-          <i class="fa fa-4x fa-fighter-jet text-primary sr-icons"></i>
-          <h3 class="mt-4 mb-4">System Engineer II</h3>
-          <p class="text-muted">April 2018 to August 2019: BAE Systems</p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center">
-          <i class="fa fa-4x fa-truck text-primary sr-icons"></i>
-          <h3 class="mt-4 mb-4">Software Developer</h3>
-          <p class="text-muted">July 2017 to April 2018: Creative Logistics Solutions (CLS)</p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center">
-          
-          <i class="fa fa-4x fa-android text-primary sr-icons"></i>
-          <i class="fa fa-4x fa-server text-primary sr-icons ml-4"></i>
-          <h3 class="mt-4 mb-4">Technical Intern</h3>
-          <p class="text-muted mb-4">Summer 2015: Fidelity Institutional (FI)</p>
-          <p class="text-muted mb-5">Summer 2016: Fidelity Personal Investing (PI) </p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center">
-          <i class="fa fa-4x fa-pied-piper text-primary sr-icons"></i>
-          <h3 class="mt-4 mb-4">Research Assistant</h3>
-          <p class="text-muted">Summer 2014: UMass Lowell's <br/>Engaging Computing Group<br/> Research Lab</p>
-        </div>
-      </div>
-      <div class="text-center">
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#funstuff">
-        Boring, show me some fun stuff!</a>
-      </div>
-    </div>
-  </section>
--->
-  
-  <!-- Some fun stuff, leave the boring code for last. -->
-  <section class="page-section bg-green">
-    <div class="container-fluid">
-      <div class="row images-vcenter">
-			
-	      <div class="col-lg-12 pb-3 text-center">
-          <h2 class="section-heading" id="funstuff">Fun Stuff</h2>
-          <hr class="divider black my-4" />
-        </div>
-			
-	      <!-- Fun stuff includes links to Mountain Biking, Skiing and Spotify playlists -->
-				<div class="col-lg-3 col-sm-6 text-center">
-          <a class="href-black" href="https://www.artstation.com/mutton">
-					<img src="https://cdnb.artstation.com/p/assets/images/images/037/202/421/large/ishan-shrestha-earth.jpg?1619756580" 
-						   class="img-fluid images-border images-size-mtb"
-						   alt="Deep Dreams">
-					</a>
-          <h3 class="mt-4 mb-4">3D Modelling</h3>
-        </div>
-				
-	      <div class="col-lg-3 col-sm-6 text-center">
-          <a class="href-black" href="https://300.itch.io/">
-					<img src="img/portfolio/thumbnails/gamedev.jpg" 
-						   class="img-fluid images-border images-size-mtb"
-						   alt="Mountain Biking">
-					</a>
-          <h3 class="mt-4 mb-4">Game Making</h3>
-        </div>
-			<!--
-        <div class="col-lg-3 col-sm-6 text-center">
-          <a class="href-black" href="https://downing.io/Skiing/">
-            <img src="img/portfolio/thumbnails/skiing.jpg" 
-                 class="img-fluid images-border-skiing images-size-skiing" 
-                 alt="SKIING!">
-          </a>
-          <h3 class="mt-4 mb-4">SKIING!</h3>
-        </div>
-				
-        <div class="col-lg-3 col-sm-6 text-center">
-          <a class="href-black" href="https://downing.io/Spotify/">
-            <img src="img/portfolio/thumbnails/spotify.png" 
-                 class="img-fluid"
-                 alt="Spotify Playlists!">
-          </a>
-          <h3 class="mt-4 mb-4">Spotify Playlists!</h3>
-        </div>
-				-->
-
-				
-     </div>
-	    
-     <div class="text-center">
-        <a class="btn btn-black btn-xl js-scroll-trigger" href="#githubb">
-        Cool, show me the <&nbsp;&frasl;&nbsp;CODE&nbsp;></a>
-     </div>
-   </div>
-  </section>
-
-  <!-- GitHub Section -->
-  <div class="page-section min-padding-top bg-dark" id="github">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-
-          <!-- Tweaking this part so the title links straight to my GitHub
-							page, without adding the silly extra "CLICK THIS ICON" text that was
-							there before. -->
-          <h2 class="section-heading" id="githubb">
-            <a class="text-white-link" href="https://github.com/Ishan5hrestha">
-						  GitHub: Ishan5hrestha
-              <i class="fa fa-1x fa-github-square" style="color:white"></i>
+          <!-- Book a Call Button -->
+          <div class="flex space-x-4">
+            <a
+              href="https://calendly.com/ishanshrestha/consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/20 w-full"
+            >
+              <i class="fa fa-calendar mr-2"></i>
+              Book a Call
             </a>
+
+            <button
+              id="explore-button"
+              class="px-6 py-3 bg-transparent border-2 border-blue-500/50 text-blue-400 rounded-lg hover:bg-blue-900/20 hover:border-blue-400 transition-all transform hover:-translate-y-1 w-full"
+            >
+              Explore Services
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            Software Solutions
           </h2>
-					<hr class="divider light my-4" />
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto mb-6"
+          ></div>
+
+          <div class="warhammer-quote max-w-3xl mx-auto">
+            "Fear not the psyker"
+          </div>
+
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            I provide end-to-end technical solutions tailored to your specific
+            needs and challenges.
+          </p>
+        </div>
+
+        <div class="content-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-code text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Custom Software Development
+              </h3>
+              <p class="text-gray-400 text-center">
+                Bespoke solutions tailored to your unique business requirements.
+              </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-mobile text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Web & Mobile Development
+              </h3>
+              <p class="text-gray-400 text-center">
+                Responsive websites and mobile applications for seamless user
+                experiences.
+              </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-gamepad text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Game Development
+              </h3>
+              <p class="text-gray-400 text-center">
+                Immersive gaming experiences built with cutting-edge
+                technologies.
+              </p>
+            </div>
+
+            <!-- Service 4 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-database text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Database Solutions
+              </h3>
+              <p class="text-gray-400 text-center">
+                Efficient data management systems to handle your information
+                needs.
+              </p>
+            </div>
+
+            <!-- Service 5 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-cogs text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Machine Learning Solutions
+              </h3>
+              <p class="text-gray-400 text-center">
+                Intelligent systems that learn and adapt to improve your
+                business operations.
+              </p>
+            </div>
+
+            <!-- Service 6 -->
+            <div
+              class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div class="flex justify-center mb-4">
+                <i class="fa fa-code-fork text-purple-500 text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-center">
+                Technical Consultation
+              </h3>
+              <p class="text-gray-400 text-center">
+                Expert advice to navigate complex technical challenges and
+                decisions.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- GitHub links below -->
-    <div class="container-fluid p-0">  <!-- p-0 makes the images go edge to edge (no padding) -->
-      <div class="row no-gutters">
-
-        <!--
-              Currently these link to:
-							Deep Dreams <-> Car Scraping Data              <-> Loan Repayment
-              downing.io  <-> Scrabble (GUI I Final Project) <-> Racket Weather
-         -->
-
-				<!-- Some code I wrote to download Deep Dreams off of DeepDreamGenerator -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/Electricity-Demand-Prediction">
-            
-						<!--  Same photo as the header, but resized. -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/deep-dreams.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-								  Electric Demand Prediction
-								</div>
-                <div class="project-name">
-								  See the python codes here
-							  </div>
-              </div>
-            </div>
-          </a>
-        </div>
-				
-				<!-- Some code I Python modified from Reddit for scraping car data -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/Assistant-Bot">
-            
-						<!--  Same photo as the header, but resized. -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/car-data-scraping.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">Assistant bot</div>
-                <div class="project-name">
-								  Helps me create new python projects on the go
-								</div>
-              </div>
-            </div>
-          </a>
-        </div>
-				
-				<!-- Loan Repayment Site using Vue.js -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/Restaurant-Management-System">
-            
-						<!--  Same photo as the header, but resized. -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/loan-repayment.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">Restaurant Management System</div>
-                <div class="project-name">
-								  Old college Minor project. Database on Firebase.
-								</div>
-              </div>
-            </div>
-          </a>
+    <!-- Experience Section with Complete Professional History -->
+    <section id="experience" class="section">
+      <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-16 mt-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            <i class="fa fa-briefcase mr-3 text-blue-400"></i>Professional
+            Experience
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            My journey through technology, development, and innovation.
+          </p>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto mt-6 rounded-full"
+          ></div>
         </div>
 
-        <!-- Source code for this website => downing.io -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/Space-Invader-Engine">
-            
-						<!--  Same photo as the header, but resized. -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/downing-io.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">Space Invader</div>
-                <div class="project-name">Made in C++ for computer graphics project</div>
+        <!-- Experience Timeline Container -->
+        <div class="relative mb-12 max-w-4xl mx-auto">
+          <div
+            class="absolute left-0 inset-y-0 w-0.5 bg-gradient-to-b from-blue-700 via-indigo-600 to-purple-700 ml-6 md:ml-8"
+          ></div>
+
+          <!-- Neural Evo: Co-Founder & COO -->
+          <div class="relative pl-16 md:pl-20 mb-12">
+            <div
+              class="absolute left-0 bg-gradient-to-br from-emerald-600 to-emerald-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+            >
+              <i class="fa fa-building text-white text-xl"></i>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-emerald-900/20 to-emerald-800/10 border border-emerald-800/30 rounded-lg p-6 shadow-lg shadow-emerald-900/5 transform transition-all hover:shadow-emerald-700/10 hover:-translate-y-1"
+            >
+              <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Co-Founder & COO</h3>
+                  <p class="text-emerald-300">
+                    <i class="fa fa-building-o mr-2"></i>Neural Evo
+                  </p>
+                </div>
+                <div
+                  class="mt-2 md:mt-0 bg-emerald-900/30 px-4 py-1 rounded-full text-sm font-medium text-emerald-300 whitespace-nowrap"
+                >
+                  <i class="fa fa-calendar mr-1"></i> Dec 2023 - Present
+                </div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-emerald-700/50 ml-2">
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                  Neural Evo is an innovative IT service provider that's always
+                  at the forefront of technology. We've successfully launched a
+                  range of SaaS products, backed by systems that are tried,
+                  tested, and built to last. We provide end-to-end complete IT
+                  solutions for all tech needs.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                  <div
+                    class="bg-emerald-900/10 p-4 rounded-lg border border-emerald-800/20 hover:bg-emerald-900/20 transition-all"
+                  >
+                    <h4 class="text-emerald-300 font-medium mb-2">
+                      <i class="fa fa-shield mr-2"></i>Vencurity
+                    </h4>
+                    <p class="text-gray-400">
+                      Vencurity's team of security experts helps with
+                      third-party risk assessments, including SIG, SIG Lite, and
+                      CAIQ. We ensure everything is done accurately and on time,
+                      so you can keep things moving smoothly and close deals
+                      without delays.
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-emerald-900/10 p-4 rounded-lg border border-emerald-800/20 hover:bg-emerald-900/20 transition-all"
+                  >
+                    <h4 class="text-emerald-300 font-medium mb-2">
+                      <i class="fa fa-microphone mr-2"></i>VoiceOverKids AI
+                    </h4>
+                    <p class="text-gray-400">
+                      WebApp to generate children's voice overs for creating TV
+                      series and audio podcasts with advanced AI technology.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-emerald-900/10 p-4 rounded-lg border border-emerald-800/20 hover:bg-emerald-900/20 transition-all mt-4"
+                >
+                  <h4 class="text-emerald-300 font-medium mb-2">
+                    <i class="fa fa-list-alt mr-2"></i>Additional Services
+                  </h4>
+                  <p class="text-gray-400">
+                    Beyond application development, we also offer top-notch
+                    security assessments through our dedicated team at
+                    Vencurity. Whether it's tackling DDQ (Due Diligence
+                    Questionnaires) or helping with vendor assessments, we're
+                    here to make sure your security and compliance needs are
+                    covered.
+                  </p>
+                </div>
               </div>
             </div>
-          </a>
+          </div>
+
+          <!-- HeyGen: Security Analyst -->
+          <div class="relative pl-16 md:pl-20 mb-12">
+            <div
+              class="absolute left-0 bg-gradient-to-br from-sky-600 to-sky-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+            >
+              <i class="fa fa-lock text-white text-xl"></i>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-sky-900/20 to-sky-800/10 border border-sky-800/30 rounded-lg p-6 shadow-lg shadow-sky-900/5 transform transition-all hover:shadow-sky-700/10 hover:-translate-y-1"
+            >
+              <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Security Analyst</h3>
+                  <p class="text-sky-300">
+                    <i class="fa fa-building-o mr-2"></i>HeyGen
+                  </p>
+                </div>
+                <div
+                  class="mt-2 md:mt-0 bg-sky-900/30 px-4 py-1 rounded-full text-sm font-medium text-sky-300 whitespace-nowrap"
+                >
+                  <i class="fa fa-calendar mr-1"></i> Mar 2024 - Present
+                </div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-sky-700/50 ml-2">
+                <div
+                  class="bg-sky-900/10 p-4 rounded-lg border border-sky-800/20 hover:bg-sky-900/20 transition-all"
+                >
+                  <h4 class="text-sky-300 font-medium mb-2">
+                    <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                  </h4>
+                  <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                    <li>
+                      Collaborate with Sales team to handle client's Vendor
+                      Assessment Questionnaires
+                    </li>
+                    <li>
+                      Oversee company's security rating and potential
+                      vulnerability on VRM platforms
+                    </li>
+                    <li>
+                      Clarify any confusions regarding security posture by
+                      HeyGen's enterprise clients
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                    >Governance, Risk Management, and Compliance (GRC)</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs"
+                    >DDQ</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-yellow-900/30 text-yellow-300 rounded-full text-xs"
+                    >Vendor Assessment</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-xs"
+                    >Risk Assessment</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-teal-900/30 text-teal-300 rounded-full text-xs"
+                    >Information Security</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arnifi: AI Engineering Consultant -->
+          <div class="relative pl-16 md:pl-20 mb-12">
+            <div
+              class="absolute left-0 bg-gradient-to-br from-indigo-600 to-indigo-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+            >
+              <i class="fa fa-cogs text-white text-xl"></i>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-indigo-900/20 to-indigo-800/10 border border-indigo-800/30 rounded-lg p-6 shadow-lg shadow-indigo-900/5 transform transition-all hover:shadow-indigo-700/10 hover:-translate-y-1"
+            >
+              <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">
+                    AI Engineering Consultant
+                  </h3>
+                  <p class="text-indigo-300">
+                    <i class="fa fa-building-o mr-2"></i>Arnifi · Contract
+                  </p>
+                </div>
+                <div
+                  class="mt-2 md:mt-0 bg-indigo-900/30 px-4 py-1 rounded-full text-sm font-medium text-indigo-300 whitespace-nowrap"
+                >
+                  <i class="fa fa-calendar mr-1"></i> Jan 2024 - Present
+                </div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-indigo-700/50 ml-2">
+                <div
+                  class="bg-indigo-900/10 p-4 rounded-lg border border-indigo-800/20 hover:bg-indigo-900/20 transition-all"
+                >
+                  <h4 class="text-indigo-300 font-medium mb-2">
+                    <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                  </h4>
+                  <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                    <li>Assessing business needs</li>
+                    <li>Designing AI strategies</li>
+                    <li>
+                      Collaboration with develoment team on integrating the
+                      solution with existing system
+                    </li>
+                    <li>Identifying opportunities for automation</li>
+                    <li>Recommending AI tools and technologies</li>
+                    <li>Collaborating with stakeholders</li>
+                    <li>Developing implementation plans</li>
+                    <li>Ensuring data privacy compliance</li>
+                    <li>Optimizing AI solutions over time</li>
+                  </ul>
+                </div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-xs"
+                    >ChatGPT</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                    >Gemini</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-yellow-900/30 text-yellow-300 rounded-full text-xs"
+                    >Chatbot Development</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-xs"
+                    >Artificial Intelligence (AI)</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs"
+                    >OpenAI</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-teal-900/30 text-teal-300 rounded-full text-xs"
+                    >Knowledge Base</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laliguras: Multiple Roles -->
+          <div class="relative pl-16 md:pl-20 mb-12">
+            <div
+              class="absolute left-0 bg-gradient-to-br from-red-700 to-red-900 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+            >
+              <i class="fa fa-cutlery text-white text-xl"></i>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-red-900/20 to-red-800/10 border border-red-800/30 rounded-lg p-6 shadow-lg shadow-red-900/5 transform transition-all hover:shadow-red-700/10 hover:-translate-y-1"
+            >
+              <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Multiple Roles</h3>
+                  <p class="text-red-300">
+                    <i class="fa fa-building-o mr-2"></i>Laliguras LLC
+                  </p>
+                </div>
+                <div
+                  class="mt-2 md:mt-0 bg-red-900/30 px-4 py-1 rounded-full text-sm font-medium text-red-300 whitespace-nowrap"
+                >
+                  <i class="fa fa-calendar mr-1"></i> Apr 2023 - Dec 2024 · 1 yr
+                  9 mos
+                </div>
+              </div>
+
+              <!-- Role Navigation Tabs -->
+              <div
+                class="flex overflow-x-auto space-x-2 mb-4 pb-2 mt-4 border-b border-red-900/30"
+              >
+                <button
+                  class="role-tab active-role px-4 py-2 rounded-t-lg bg-red-900/50 text-white"
+                  data-role="advisor"
+                >
+                  <i class="fa fa-user-md mr-1"></i> Technical Advisor
+                </button>
+                <button
+                  class="role-tab px-4 py-2 rounded-t-lg bg-red-900/30 text-gray-300"
+                  data-role="lead"
+                >
+                  <i class="fa fa-users mr-1"></i> Technical Lead
+                </button>
+                <button
+                  class="role-tab px-4 py-2 rounded-t-lg bg-red-900/30 text-gray-300"
+                  data-role="engineer"
+                >
+                  <i class="fa fa-code mr-1"></i> Full Stack Engineer
+                </button>
+              </div>
+
+              <!-- Technical Advisor Role Content -->
+              <div
+                id="role-advisor"
+                class="role-content pl-2 border-l-2 border-red-700/50 ml-2"
+              >
+                <div class="flex justify-between mb-4">
+                  <div class="text-red-300 text-sm">
+                    <i class="fa fa-clock-o mr-1"></i> Oct 2024 - Dec 2024 · 3
+                    mos
+                  </div>
+                  <div
+                    class="bg-red-900/30 px-3 py-1 rounded-full text-xs text-red-300"
+                  >
+                    Full-time
+                  </div>
+                </div>
+
+                <div
+                  class="bg-red-900/10 p-4 rounded-lg border border-red-800/20 hover:bg-red-900/20 transition-all"
+                >
+                  <h4 class="text-red-300 font-medium mb-2">
+                    <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                  </h4>
+                  <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                    <li>
+                      Provide expert technical guidance aligned with company
+                      goals
+                    </li>
+                    <li>
+                      Mentor teams on best practices in software and
+                      architecture
+                    </li>
+                    <li>Troubleshoot and resolve complex technical issues</li>
+                    <li>Identify process improvements for efficiency</li>
+                    <li>
+                      Bridge communication between technical teams and
+                      stakeholders
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Technical Lead Role Content -->
+              <div
+                id="role-lead"
+                class="role-content hidden pl-2 border-l-2 border-red-700/50 ml-2"
+              >
+                <div class="flex justify-between mb-4">
+                  <div class="text-red-300 text-sm">
+                    <i class="fa fa-clock-o mr-1"></i> Aug 2023 - Oct 2024 · 1
+                    yr 3 mos
+                  </div>
+                  <div
+                    class="bg-red-900/30 px-3 py-1 rounded-full text-xs text-red-300"
+                  >
+                    Full-time
+                  </div>
+                </div>
+
+                <div
+                  class="bg-red-900/10 p-4 rounded-lg border border-red-800/20 hover:bg-red-900/20 transition-all"
+                >
+                  <h4 class="text-red-300 font-medium mb-2">
+                    <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                  </h4>
+                  <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                    <li>
+                      Align business objectives with technology strategies for
+                      optimal results
+                    </li>
+                    <li>
+                      Lead cross-functional teams in the successful execution of
+                      projects
+                    </li>
+                    <li>
+                      Provide technical guidance and mentorship to ensure
+                      high-quality deliverables
+                    </li>
+                    <li>
+                      Design robust, scalable and secure technical solutions to
+                      meet business challenges
+                    </li>
+                    <li>
+                      Efficiently allocate resources to meet project deadlines
+                      and milestones
+                    </li>
+                    <li>
+                      Identify and mitigate technical risks to ensure project
+                      success
+                    </li>
+                    <li>
+                      Facilitate clear communication between technical and
+                      non-technical stakeholders
+                    </li>
+                    <li>
+                      Stay abreast of emerging technologies to recommend
+                      suitable advancements
+                    </li>
+                    <li>
+                      Manage project budgets, ensuring cost-effectiveness and
+                      efficiency
+                    </li>
+                    <li>
+                      Evaluate and collaborate with external vendors for
+                      technology solutions
+                    </li>
+                    <li>
+                      Ensure compliance with relevant industry regulations and
+                      standards
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                    >Project Management</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-xs"
+                    >Engineering Management</span
+                  >
+                </div>
+              </div>
+
+              <!-- Full Stack Engineer Role Content -->
+              <div
+                id="role-engineer"
+                class="role-content hidden pl-2 border-l-2 border-red-700/50 ml-2"
+              >
+                <div class="flex justify-between mb-4">
+                  <div class="text-red-300 text-sm">
+                    <i class="fa fa-clock-o mr-1"></i> Apr 2023 - Jul 2023 · 4
+                    mos
+                  </div>
+                  <div
+                    class="bg-red-900/30 px-3 py-1 rounded-full text-xs text-red-300"
+                  >
+                    Part-time
+                  </div>
+                </div>
+
+                <div
+                  class="bg-red-900/10 p-4 rounded-lg border border-red-800/20 hover:bg-red-900/20 transition-all"
+                >
+                  <h4 class="text-red-300 font-medium mb-2">
+                    <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                  </h4>
+                  <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                    <li>
+                      Designed a scalable and efficient system architecture with
+                      a robust schema
+                    </li>
+                    <li>
+                      Crafted an interactive and responsive user interface
+                      integrated with cartography libraries
+                    </li>
+                    <li>
+                      Engineered server-side logic, RESTful APIs, and
+                      implemented secure authentication
+                    </li>
+                    <li>
+                      Incorporated geocoding, reverse geocoding, and spatial
+                      analysis features
+                    </li>
+                    <li>
+                      Integrated third-party APIs and diverse data sources for
+                      enhanced functionality
+                    </li>
+                    <li>
+                      Optimized performance with caching strategies and load
+                      balancing
+                    </li>
+                    <li>
+                      Established CI/CD pipelines and automated build processes
+                      for efficient deployment
+                    </li>
+                    <li>
+                      Provided technical leadership, guided the development
+                      team, and ensured project milestones
+                    </li>
+                    <li>
+                      Ensured clear documentation for codebase, APIs, and user
+                      guides for effective platform use
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                    >Full-Stack Development</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-xs"
+                    >Software Infrastructure</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-xs"
+                    >DevOps</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle Previous Experience Button -->
+          <div class="text-center mt-8">
+            <button
+              id="toggle-previous"
+              class="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600 text-white rounded-lg shadow transform transition-all hover:-translate-y-1 focus:outline-none"
+            >
+              <span>Previous Experience</span>
+              <i id="toggle-icon" class="fa fa-chevron-down ml-2"></i>
+            </button>
+          </div>
+
+          <!-- Previous Experience (Initially Hidden) -->
+          <div id="previous-content" class="hidden mt-8">
+            <!-- LIS Nepal -->
+            <div class="relative pl-16 md:pl-20 mb-12">
+              <div
+                class="absolute left-0 -ml-16 md:-ml-20 bg-gradient-to-br from-blue-600 to-blue-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+              >
+                <i class="fa fa-database text-white text-xl"></i>
+              </div>
+
+              <div
+                class="bg-gradient-to-r from-blue-900/20 to-blue-800/10 border border-blue-800/30 rounded-lg p-6 shadow-lg shadow-blue-900/5 transform transition-all hover:shadow-blue-700/10 hover:-translate-y-1"
+              >
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Software Engineer
+                    </h3>
+                    <p class="text-blue-300">
+                      <i class="fa fa-building-o mr-2"></i>LIS Nepal Pvt. Ltd.
+                    </p>
+                  </div>
+                  <div
+                    class="mt-2 md:mt-0 bg-blue-900/30 px-4 py-1 rounded-full text-sm font-medium text-blue-300 whitespace-nowrap"
+                  >
+                    <i class="fa fa-calendar mr-1"></i> Mar 2023 - Jul 2023 · 5
+                    mos
+                  </div>
+                </div>
+
+                <div class="pl-2 border-l-2 border-blue-700/50 ml-2">
+                  <div
+                    class="bg-blue-900/10 p-4 rounded-lg border border-blue-800/20 hover:bg-blue-900/20 transition-all"
+                  >
+                    <h4 class="text-blue-300 font-medium mb-2">
+                      <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                    </h4>
+                    <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                      <li>
+                        Worked as Data Engineer for product feature development
+                        and Implementation project of Robling
+                      </li>
+                      <li>
+                        Prepared ETL and Data Reconciliation script for various
+                        projects
+                      </li>
+                      <li>
+                        Automated data validation done by a team to reduce the
+                        effort and time taken by 36x
+                      </li>
+                      <li>
+                        Worked on code consolidation and auto documentation
+                        generation on Wagtail CMS
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                      >Snowflake</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-xs"
+                      >Wagtail CMS</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-xs"
+                      >Azure Data Factory</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-yellow-900/30 text-yellow-300 rounded-full text-xs"
+                      >Microsoft Power BI</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs"
+                      >NumPy</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-teal-900/30 text-teal-300 rounded-full text-xs"
+                      >Extract, Transform, Load (ETL)</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-indigo-900/30 text-indigo-300 rounded-full text-xs"
+                      >Pandas</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-amber-900/30 text-amber-300 rounded-full text-xs"
+                      >Netezza</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-xs"
+                      >Amazon S3</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hitachi Energy -->
+            <div class="relative pl-16 md:pl-20 mb-12">
+              <div
+                class="absolute left-0 -ml-16 md:-ml-20 bg-gradient-to-br from-orange-600 to-orange-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+              >
+                <i class="fa fa-bolt text-white text-xl"></i>
+              </div>
+
+              <div
+                class="bg-gradient-to-r from-orange-900/20 to-orange-800/10 border border-orange-800/30 rounded-lg p-6 shadow-lg shadow-orange-900/5 transform transition-all hover:shadow-orange-700/10 hover:-translate-y-1"
+              >
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Associate Software Engineer
+                    </h3>
+                    <p class="text-orange-300">
+                      <i class="fa fa-building-o mr-2"></i>Hitachi Energy
+                    </p>
+                  </div>
+                  <div
+                    class="mt-2 md:mt-0 bg-orange-900/30 px-4 py-1 rounded-full text-sm font-medium text-orange-300 whitespace-nowrap"
+                  >
+                    <i class="fa fa-calendar mr-1"></i> Jan 2022 - Feb 2023 · 1
+                    yr 2 mos
+                  </div>
+                </div>
+
+                <div class="pl-2 border-l-2 border-orange-700/50 ml-2">
+                  <div
+                    class="bg-orange-900/10 p-4 rounded-lg border border-orange-800/20 hover:bg-orange-900/20 transition-all"
+                  >
+                    <h4 class="text-orange-300 font-medium mb-2">
+                      <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                    </h4>
+                    <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                      <li>
+                        Created efficient and optimized stored procedures for
+                        handling complex database operations
+                      </li>
+                      <li>
+                        Debugged nested stored procedures to resolve issues and
+                        ensure smooth execution
+                      </li>
+                      <li>
+                        Developed and scheduled SQL Server Agent jobs to
+                        automate routine tasks
+                      </li>
+                      <li>
+                        Utilized SQL Server Profiler and Extended Events to
+                        capture and analyze query execution
+                      </li>
+                      <li>
+                        Created Postman request scripts to facilitate future
+                        testing
+                      </li>
+                      <li>
+                        Contributed to the release of TRMTracker 6.0 by
+                        incorporating additional features
+                      </li>
+                      <li>
+                        Resolved issues and added new features to the internal
+                        HRMS
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                      >Transact-SQL (T-SQL)</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-xs"
+                      >Microsoft Power BI</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-yellow-900/30 text-yellow-300 rounded-full text-xs"
+                      >CTRM</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-xs"
+                      >PHP</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs"
+                      >Postman</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-teal-900/30 text-teal-300 rounded-full text-xs"
+                      >ETRM</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Freelance Web Developer -->
+            <div class="relative pl-16 md:pl-20 mb-12">
+              <div
+                class="absolute left-0 -ml-16 md:-ml-20 bg-gradient-to-br from-purple-600 to-purple-800 w-12 h-12 rounded-full flex items-center justify-center border-4 border-dark-secondary shadow-lg"
+              >
+                <i class="fa fa-code text-white text-xl"></i>
+              </div>
+
+              <div
+                class="bg-gradient-to-r from-purple-900/20 to-purple-800/10 border border-purple-800/30 rounded-lg p-6 shadow-lg shadow-purple-900/5 transform transition-all hover:shadow-purple-700/10 hover:-translate-y-1"
+              >
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Freelance Web Developer
+                    </h3>
+                    <p class="text-purple-300">
+                      <i class="fa fa-globe mr-2"></i>Freelance
+                    </p>
+                  </div>
+                  <div
+                    class="mt-2 md:mt-0 bg-purple-900/30 px-4 py-1 rounded-full text-sm font-medium text-purple-300 whitespace-nowrap"
+                  >
+                    <i class="fa fa-calendar mr-1"></i> Jan 2020 - May 2021 · 1
+                    yr 5 mos
+                  </div>
+                </div>
+
+                <div class="pl-2 border-l-2 border-purple-700/50 ml-2">
+                  <div
+                    class="bg-purple-900/10 p-4 rounded-lg border border-purple-800/20 hover:bg-purple-900/20 transition-all"
+                  >
+                    <h4 class="text-purple-300 font-medium mb-2">
+                      <i class="fa fa-tasks mr-2"></i>Key Responsibilities
+                    </h4>
+                    <ul class="text-gray-400 list-disc pl-5 space-y-1">
+                      <li>Developed and hosted survey website on Firebase</li>
+                      <li>
+                        Collaborated with client regarding the structure of
+                        frontend and representation of data
+                      </li>
+                      <li>
+                        Interacted with users to resolve issues with the UI
+                        across various devices
+                      </li>
+                      <li>
+                        Automated backup of data to drive and problem resolution
+                        in production environment
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-xs"
+                      >Firebase</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs"
+                      >JavaScript</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs"
+                      >Postman</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun Stuff Section -->
+    <section id="funstuff" class="section">
+      <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            Fun Stuff
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto mb-6"
+          ></div>
+
+          <div class="warhammer-quote max-w-3xl mx-auto">
+            "Walk softly and carry a big gun."
+          </div>
+
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            A collection of creative projects and personal endeavors outside of
+            work.
+          </p>
         </div>
 
-        <!-- Source code for GUI I last assignment (Scrabble) -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/ArmoryFPSController">
-            <!--  Thumbnail from Wikipedia
-                  URL: https://upload.wikimedia.org/wikipedia/commons/5/5d/Scrabble_game_in_progress.jpg
-            -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/scrabble.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
+        <div class="content-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- 3D Modelling -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/037/202/421/large/ishan-shrestha-earth.jpg?1619756580"
+                class="w-full h-64 object-cover"
+                alt="3D Modelling"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-xl font-semibold mb-2">3D Modelling</h3>
+                <a
+                  href="https://www.artstation.com/mutton"
+                  class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Projects
+                </a>
+              </div>
+            </div>
+
+            <!-- Game Making -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                src="img/portfolio/thumbnails/gamedev.jpg"
+                class="w-full h-64 object-cover"
+                alt="Game Development"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-xl font-semibold mb-2">Game Making</h3>
+                <a
+                  href="https://300.itch.io/"
+                  class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  Play Games
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github" class="section">
+      <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            GitHub Projects
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto mb-6"
+          ></div>
+
+          <div class="warhammer-quote max-w-3xl mx-auto">
+            "Work earns Salvation."
+          </div>
+
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Explore my open-source contributions and personal coding projects.
+          </p>
+        </div>
+
+        <div class="content-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/deep-dreams.jpg"
+                alt="Electric Demand Prediction"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">
+                  Electric Demand Prediction
+                </h3>
+                <p class="text-sm text-gray-300 mb-4">
+                  See the python codes here
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/Electricity-Demand-Prediction"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/car-data-scraping.jpg"
+                alt="Assistant Bot"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">Assistant Bot</h3>
+                <p class="text-sm text-gray-300 mb-4">
+                  Helps me create new python projects on the go
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/Assistant-Bot"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/loan-repayment.jpg"
+                alt="Restaurant Management System"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">
+                  Restaurant Management System
+                </h3>
+                <p class="text-sm text-gray-300 mb-4">
+                  Old college Minor project. Database on Firebase.
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/Restaurant-Management-System"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/downing-io.jpg"
+                alt="Space Invader"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">Space Invader</h3>
+                <p class="text-sm text-gray-300 mb-4">
+                  Made in C++ for computer graphics project
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/Space-Invader-Engine"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/scrabble.jpg"
+                alt="Armory3D FPS Controller"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">
                   Armory3D FPS Controller
-                </div>
-                <div class="project-name">
-                  Written in Haxe, Character is able to walk on any type of surface
-                </div>
+                </h3>
+                <p class="text-sm text-gray-300 mb-4">
+                  Written in Haxe, Character is able to walk on any type of
+                  surface
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/ArmoryFPSController"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
               </div>
             </div>
-          </a>
-        </div>
 
-        <!-- Source code for OPL Project (Racket Weather) -->
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="https://github.com/Ishan5hrestha/Encryption-Diary">
-            <!-- Thumbnail from gannett-cdn.com
-                 URL: http://www.gannett-cdn.com/-mm-/3526533239800dac0c978150377d099025f1e52c/c=52-700-4303-3102&r=x1683&c=3200x1680/local/-/media/USATODAY/None/2014/10/03/1412368123000-Mesostorm-Lightning.jpg -->
-            <img class="img-responsive" width="100%" height="auto" src="img/portfolio/thumbnails/racket-weather.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Encryption Diary
-                </div>
-                <div class="project-name">
+            <!-- Project 6 -->
+            <div class="portfolio-item shadow-lg">
+              <img
+                class="w-full h-48 object-cover"
+                src="img/portfolio/thumbnails/racket-weather.jpg"
+                alt="Encryption Diary"
+              />
+              <div class="portfolio-overlay">
+                <h3 class="text-lg font-semibold mb-2">Encryption Diary</h3>
+                <p class="text-sm text-gray-300 mb-4">
                   Keeps your words safe with Hash based encryption
-                </div>
+                </p>
+                <a
+                  href="https://github.com/Ishan5hrestha/Encryption-Diary"
+                  class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+                >
+                  View Project
+                </a>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-				
       </div>
-			
-			<div class="text-center p-4">
-        <a class="btn btn-black btn-xl js-scroll-trigger" href="#contact">
-        Contact Ishan
-				</a>
-      </div>
-			
-    </div>
-  </div>
+    </section>
 
-  <!-- Contact section -->
-  <section class="min-padding" id="contact">
-    <div class="container">
-    
-      <!-- Contact Jason Row -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">
-          
-          <!-- Attempting to avoid spam by removing @ and the dot in my domain -->
-            Contact Ishan</h2>
-          <hr class="divider black my-4" />
-          <p>If you have an interesting opportunity, you
-            can send (no spam plz 🙁) him a message using the form below.</p>
-          
-          <form action="https://formspree.io/f/mzbyqold" method="POST" class="form-horizontal" role="form">
-            <!-- Need a name, reply to email, and a message -->
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" class="form-control" required>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            Get In Touch
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto mb-6"
+          ></div>
+
+          <div class="warhammer-quote max-w-3xl mx-auto">
+            "Who requires my aid."
+          </div>
+
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Let's discuss how I can help you achieve your software goals.
+          </p>
+        </div>
+
+        <div class="max-w-lg mx-auto">
+          <form
+            action="https://formspree.io/f/mzbyqold"
+            method="POST"
+            class="space-y-6"
+          >
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                class="custom-input w-full"
+              />
             </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your Email" class="form-control" required>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                class="custom-input w-full"
+              />
             </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Your message" class="form-control" required></textarea>
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your message"
+                required
+                rows="4"
+                class="custom-input w-full"
+              ></textarea>
             </div>
-            <!-- Hidden elements here -->
-            <input type="hidden" name="_subject" value="New email from Contact Me Form!" class="form-control">
+            <!-- Hidden elements -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New email from Contact Me Form!"
+            />
             <input type="hidden" name="_next" value="thanks.html" />
-            <!-- Submit button -->
-            <div class="form-group">
-              <input type="submit" value="Email Ishan" class="btn btn-primary btn-xl">
+            <div class="text-center">
+              <button type="submit" class="custom-btn">Email Ishan</button>
             </div>
           </form>
+
+          <div class="mt-12 text-center">
+            <div class="flex flex-wrap justify-center gap-6 mt-4">
+              <div class="text-center">
+                <a
+                  href="img/resume.pdf"
+                  class="block p-3 bg-[#2d2d2d] rounded-full transition-transform duration-300 transform hover:scale-110"
+                >
+                  <i class="fa fa-envelope text-purple-500 text-2xl"></i>
+                </a>
+                <p class="text-sm mt-2">Email</p>
+              </div>
+
+              <div class="text-center">
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  class="block p-3 bg-[#2d2d2d] rounded-full transition-transform duration-300 transform hover:scale-110"
+                >
+                  <i class="fa fa-linkedin text-purple-500 text-2xl"></i>
+                </a>
+                <p class="text-sm mt-2">LinkedIn</p>
+              </div>
+
+              <div class="text-center">
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  class="block p-3 bg-[#2d2d2d] rounded-full transition-transform duration-300 transform hover:scale-110"
+                >
+                  <i class="fa fa-github text-purple-500 text-2xl"></i>
+                </a>
+                <p class="text-sm mt-2">GitHub</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <p>You can also find my personal email, LinkedIn and GitHub below too.</p>
-        </div>
-      </div>
-      
-      <!-- Email, LinkedIn, and GitHub links -->
-      <div class="row">
-      
-			  <!-- Removed email link, because spam bots just figure it out and I get hit with 10s of thousands of
-              requests a month so... not doing that. If you can read this, just open up my resume ;P      -->
-        <div class="col-4 col-sm-4 col-lg-2 offset-lg-3 text-center">
-				  <a href="img/resume.pdf">
-						<i class="fa fa-envelope fa-4x sr-icons"></i>
-					</a>
-					<a href="img/resume.pdf">
-						<p>Email - <span class="text-blue text-italic font-weight-bold">see resume</span></p>
-					</a>
-        </div>
-        
-        <div class="col-4 col-sm-4 col-lg-2 text-center">
-          <a href="https://www.linkedin.com/in/jasonpdowning">
-            <i class="fa fa-linkedin-square fa-4x sr-icons"></i>
-          </a>
-          <p><a href="https://www.linkedin.com/in/ishanshrestha/" class="text-blue">LinkedIn</a></p>
-        </div>
-        
-        <div class="col-4 col-sm-4 col-lg-2 text-center">
-          <a href="https://github.com/Ishan5hrestha">
-            <i class="fa fa-github-square fa-4x sr-icons"></i>
-          </a>
-          <p><a href="https://github.com/Ishan5hrestha" class="text-blue">GitHub</a></p>
-        </div>
-      </div>
+    </section>
+
+    <!-- Copyright Text -->
+    <div
+      class="fixed bottom-4 left-0 w-full text-center text-gray-500 text-xs z-30"
+    >
+      Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>
     </div>
-  </section>
 
+    <!-- JavaScript for interactivity -->
+    <script>
+      // DOM Elements
+      const sections = document.querySelectorAll(".section");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const exploreButton = document.getElementById("explore-button");
+      const logoLink = document.getElementById("logo-link");
 
-  <div class="container">
-    <p class="text-center text-muted text-small mb-1">
-      Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>. All rights reserved.
-      Powered by <a href="http://www.getbootstrap.com/" class="text-blue">Bootstrap</a>.
-    </p>
-    <p class="text-center text-muted text-small">
-      Source on <a href="https://github.com/JasonD94/jasond94.github.io" class="text-blue">GitHub</a>.
-      Theme based on the
-      <a href="http://startbootstrap.com/template-overviews/creative/" class="text-blue">Creative Bootstrap Theme</a>
-      by <a href="http://startbootstrap.com/" class="text-blue">Start Bootstrap</a>.
-    </p>
-		<br/>
-  </div>
+      // Initialize copyright year
+      document.getElementById("copyright-year").innerHTML =
+        new Date().getFullYear();
 
-  
- <!-- Bootstrap core JS-->
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Third party plugin JS-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-	<!-- Core theme JS-->
-  <script src="js/creative.js"></script>
-	
-	<!-- Automagically update the copyright year - why did I ever hardcode that? RIP lazy 2015 - 2020 me. -->
-	<script>
-		document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
-	</script>
-  
-</body>
+      // Section transition function
+      function navigateTo(sectionId) {
+        // Hide all sections first
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        // Show the selected section with animation
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          setTimeout(() => {
+            targetSection.classList.add("active");
+          }, 100);
+
+          // Update navigation links
+          navLinks.forEach((link) => {
+            link.classList.remove("nav-active");
+            if (link.getAttribute("data-section") === sectionId) {
+              link.classList.add("nav-active");
+            }
+          });
+        }
+
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+        }
+      }
+
+      // Event listeners for nav links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const sectionId = this.getAttribute("data-section");
+          navigateTo(sectionId);
+        });
+      });
+
+      // Mobile menu toggle
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Mobile menu links
+      document
+        .querySelectorAll("#mobileMenu a[data-section]")
+        .forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute("data-section");
+            navigateTo(sectionId);
+          });
+        });
+
+      // Explore button
+      exploreButton.addEventListener("click", () => {
+        navigateTo("services");
+      });
+
+      // Logo link
+      logoLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigateTo("home");
+      });
+
+      // Business card 3D effect
+      const card = document.querySelector(".business-card");
+
+      document.addEventListener("mousemove", (e) => {
+        if (document.getElementById("home").classList.contains("active")) {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+          card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        }
+      });
+
+      // Reset card position when mouse leaves
+      document.addEventListener("mouseleave", () => {
+        if (document.getElementById("home").classList.contains("active")) {
+          card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+        }
+      });
+
+      // Add transition animations when switching sections
+      function addEntranceAnimation(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+
+        // We're just ensuring contents are visible without additional animations
+        const contentElements = section.querySelectorAll(
+          "h2, .w-16, p, .grid, .max-w-lg"
+        );
+        contentElements.forEach((el) => {
+          el.style.opacity = 1;
+          el.style.transform = "translateY(0)";
+          // Remove any transitions to prevent unintended animations
+          el.style.transition = "none";
+        });
+      }
+
+      // Enhanced role tabs functionality with smooth transitions
+      const roleTabs = document.querySelectorAll(".role-tab");
+      const roleContents = document.querySelectorAll(".role-content");
+
+      if (roleTabs.length > 0 && roleContents.length > 0) {
+        roleTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            // Remove active class from all tabs with smooth transition
+            roleTabs.forEach((t) => {
+              t.classList.remove("active-role");
+              t.classList.remove("bg-red-900/50");
+              t.classList.add("bg-red-900/30");
+              t.classList.remove("text-white");
+              t.classList.add("text-gray-300");
+            });
+
+            // Hide all content with fade effect
+            roleContents.forEach((content) => {
+              content.style.opacity = "0";
+              setTimeout(() => {
+                content.classList.add("hidden");
+              }, 200);
+            });
+
+            // Activate clicked tab with transitions
+            tab.classList.add("active-role");
+            tab.classList.remove("bg-red-900/30");
+            tab.classList.add("bg-red-900/50");
+            tab.classList.remove("text-gray-300");
+            tab.classList.add("text-white");
+
+            // Show corresponding content with fade-in effect
+            const roleId = tab.getAttribute("data-role");
+            const contentEl = document.getElementById(`role-${roleId}`);
+            if (contentEl) {
+              setTimeout(() => {
+                contentEl.classList.remove("hidden");
+                setTimeout(() => {
+                  contentEl.style.opacity = "1";
+                }, 50);
+              }, 200);
+            }
+          });
+        });
+      }
+
+      // Improved toggle for previous roles button
+      const togglePreviousBtn = document.getElementById("toggle-previous");
+      const previousContent = document.getElementById("previous-content");
+      const toggleIcon = document.getElementById("toggle-icon");
+
+      if (togglePreviousBtn && previousContent && toggleIcon) {
+        togglePreviousBtn.addEventListener("click", () => {
+          if (previousContent.classList.contains("hidden")) {
+            // Show previous content with slide down animation
+            previousContent.classList.remove("hidden");
+            previousContent.style.maxHeight = "0";
+            previousContent.style.opacity = "0";
+
+            setTimeout(() => {
+              previousContent.style.maxHeight = "1000px";
+              previousContent.style.opacity = "1";
+              toggleIcon.classList.remove("fa-chevron-down");
+              toggleIcon.classList.add("fa-chevron-up");
+            }, 10);
+          } else {
+            // Hide with slide up animation
+            previousContent.style.maxHeight = "0";
+            previousContent.style.opacity = "0";
+
+            setTimeout(() => {
+              previousContent.classList.add("hidden");
+              toggleIcon.classList.remove("fa-chevron-up");
+              toggleIcon.classList.add("fa-chevron-down");
+            }, 500);
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

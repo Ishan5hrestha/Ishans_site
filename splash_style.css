@@ -2,6 +2,8 @@ html,
 body {
   margin: 0 auto;
   height: 100%;
+  background: #000;
+  overflow: hidden;
 }
 
 pre {
@@ -13,24 +15,93 @@ pre {
   margin: 0 auto;
   min-height: 100%;
   width: 100%;
-  background: black;
+  background: #000;
+  position: relative;
+}
+
+/* Add subtle scanline effect */
+.load:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Add subtle screen glow */
+.load:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 70, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .term {
-  font-family: monospace;
-  color: #fff;
-  opacity: 0.8;
-  font-size: 2em;
+  font-family: "Courier New", monospace;
+  color: #33ff33;
+  opacity: 0.9;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: normal;
+  white-space: pre;
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 10px;
   padding-left: 20px;
+  padding-bottom: 20px;
+  height: 100vh;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+  scroll-behavior: smooth;
 }
 
 .term:after {
   content: "_";
   opacity: 1;
   animation: cursor 1s infinite;
+}
+
+/* Terminal text styling for different message types */
+.term .timestamp {
+  color: #888;
+  font-weight: normal;
+}
+
+.term .imperial {
+  color: #ff9933;
+  font-weight: bold;
+}
+
+.term .quote {
+  color: #cc99ff;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+}
+
+.term .system-msg {
+  color: #3399ff;
+  font-weight: bold;
 }
 
 @keyframes cursor {

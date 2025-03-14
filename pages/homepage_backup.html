@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Custom Title Bar -->
+    <title>Ishan Shrestha</title>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
+
+    <!-- Google fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              dark: {
+                DEFAULT: "#121212",
+                secondary: "#1e1e1e",
+                accent: "#2d2d2d",
+              },
+              accent: {
+                DEFAULT: "#7C3AED", // purple
+                light: "#8B5CF6",
+                dark: "#6D28D9",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Analytics Tracking Tag -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-68657454-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <!-- Open Graph Metadata tags -->
+    <meta property="og:url" content="https://ishans.com.np/" />
+    <meta
+      property="og:image:alt"
+      content="A Deep Dreamed view of the Middlesex Fells Reservoir in Medford, MA"
+    />
+    <meta property="g:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="Ishan Shrestha" />
+    <meta property="og:title" content="Ishan's Personal Website" />
+    <meta
+      property="og:description"
+      content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
+
+    <meta
+      name="description"
+      content="This is Ishan Shrestha's Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #121212;
+        color: #f9fafb;
+      }
+
+      .gradient-text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(45deg, #7c3aed, #ec4899);
+      }
+
+      .portfolio-item {
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(45deg, #7c3aed, #ec4899);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .section-transition {
+        position: relative;
+        height: 100px;
+        overflow: hidden;
+      }
+
+      .section-transition svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#121212] text-white">
+    <!-- Navbar -->
+    <nav
+      id="mainNav"
+      class="fixed w-full z-50 transition-all duration-300 ease-in-out bg-[#121212] bg-opacity-90 backdrop-blur-md py-4"
+    >
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex justify-between items-center">
+          <a
+            href="#page-top"
+            class="text-xl md:text-2xl font-bold gradient-text"
+            >Ishan Shrestha</a
+          >
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menuToggle" class="text-white focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#page-top"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >Home</a
+            >
+            <a
+              href="#work"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >Services</a
+            >
+            <a
+              href="#funstuff"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >Fun</a
+            >
+            <a
+              href="#githubb"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >GitHub</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >Contact</a
+            >
+            <a
+              href="img/resume.pdf"
+              class="nav-link text-gray-300 hover:text-white transition-colors duration-300"
+              >Resume</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden pt-4 pb-2">
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#page-top"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Home</a
+            >
+            <a
+              href="#work"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Services</a
+            >
+            <a
+              href="#funstuff"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Fun</a
+            >
+            <a
+              href="#githubb"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >GitHub</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Contact</a
+            >
+            <a
+              href="img/resume.pdf"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Resume</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header
+      id="page-top"
+      class="min-h-screen flex items-center justify-center bg-[#121212] relative overflow-hidden"
+    >
+      <!-- Background Particles or Pattern (optional) -->
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="container mx-auto px-4 text-center z-10">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <span class="gradient-text">Ishan Shrestha</span>
+        </h1>
+        <div
+          class="w-20 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-8"
+        ></div>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Software Merchant |
+          <span class="text-purple-400"
+            >Delivering Digital Solutions That Matter</span
+          >
+        </p>
+        <p class="text-lg italic font-medium mb-10 text-gray-400">
+          The code you need, when you need it.
+        </p>
+        <a
+          href="#work"
+          class="px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+        >
+          Explore Services
+        </a>
+      </div>
+    </header>
+
+    <!-- Services Section (formerly Work) -->
+    <section id="work" class="py-20 bg-[#1e1e1e]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Services</h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Crafting digital solutions tailored to your needs. Your vision, my
+            expertise.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-code text-purple-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Custom Software Development
+            </h3>
+            <p class="text-gray-400 text-center">
+              Bespoke solutions tailored to your unique business requirements.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-mobile text-purple-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Web & Mobile Development
+            </h3>
+            <p class="text-gray-400 text-center">
+              Responsive websites and mobile applications for seamless user
+              experiences.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-gamepad text-purple-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Game Development
+            </h3>
+            <p class="text-gray-400 text-center">
+              Immersive gaming experiences built with cutting-edge technologies.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-database text-purple-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Database Solutions
+            </h3>
+            <p class="text-gray-400 text-center">
+              Efficient data management systems to handle your information
+              needs.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-brain text-purple-500 text-4xl"></i>
+              <!-- Using fa-brain if available -->
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Machine Learning Solutions
+            </h3>
+            <p class="text-gray-400 text-center">
+              Intelligent systems that learn and adapt to improve your business
+              operations.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-[#2d2d2d] p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="flex justify-center mb-4">
+              <i class="fa fa-code-fork text-purple-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Technical Consultation
+            </h3>
+            <p class="text-gray-400 text-center">
+              Expert advice to navigate complex technical challenges and
+              decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#funstuff"
+            class="px-8 py-3 bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-medium rounded-full transition-all duration-300"
+          >
+            Discover Fun Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun Stuff Section -->
+    <section id="funstuff" class="py-20 bg-[#121212]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Fun Stuff</h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Beyond the code, here's where creativity takes different forms.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- 3D Modelling -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="https://cdnb.artstation.com/p/assets/images/images/037/202/421/large/ishan-shrestha-earth.jpg?1619756580"
+              class="w-full h-64 object-cover"
+              alt="3D Modelling"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-semibold mb-2">3D Modelling</h3>
+              <a
+                href="https://www.artstation.com/mutton"
+                class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Projects
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Making -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="img/portfolio/thumbnails/gamedev.jpg"
+              class="w-full h-64 object-cover"
+              alt="Game Development"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-semibold mb-2">Game Making</h3>
+              <a
+                href="https://300.itch.io/"
+                class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                Play Games
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#githubb"
+            class="px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-medium rounded-full transition-all duration-300"
+          >
+            Explore My Code
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="githubb" class="py-20 bg-[#1e1e1e]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <a
+              href="https://github.com/Ishan5hrestha"
+              class="hover:text-purple-400 transition-colors duration-300"
+            >
+              GitHub: Ishan5hrestha
+              <i class="fa fa-github-square ml-2"></i>
+            </a>
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Check out my open-source contributions and personal projects.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/deep-dreams.jpg"
+              alt="Electric Demand Prediction"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">
+                Electric Demand Prediction
+              </h3>
+              <p class="text-sm text-gray-300 mb-4">
+                See the python codes here
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/Electricity-Demand-Prediction"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/car-data-scraping.jpg"
+              alt="Assistant Bot"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">Assistant Bot</h3>
+              <p class="text-sm text-gray-300 mb-4">
+                Helps me create new python projects on the go
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/Assistant-Bot"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/loan-repayment.jpg"
+              alt="Restaurant Management System"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">
+                Restaurant Management System
+              </h3>
+              <p class="text-sm text-gray-300 mb-4">
+                Old college Minor project. Database on Firebase.
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/Restaurant-Management-System"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/downing-io.jpg"
+              alt="Space Invader"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">Space Invader</h3>
+              <p class="text-sm text-gray-300 mb-4">
+                Made in C++ for computer graphics project
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/Space-Invader-Engine"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/scrabble.jpg"
+              alt="Armory3D FPS Controller"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">
+                Armory3D FPS Controller
+              </h3>
+              <p class="text-sm text-gray-300 mb-4">
+                Written in Haxe, Character is able to walk on any type of
+                surface
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/ArmoryFPSController"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="portfolio-item rounded-lg overflow-hidden shadow-lg">
+            <img
+              class="w-full h-48 object-cover"
+              src="img/portfolio/thumbnails/racket-weather.jpg"
+              alt="Encryption Diary"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-lg font-semibold mb-2">Encryption Diary</h3>
+              <p class="text-sm text-gray-300 mb-4">
+                Keeps your words safe with Hash based encryption
+              </p>
+              <a
+                href="https://github.com/Ishan5hrestha/Encryption-Diary"
+                class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm transition-colors duration-300"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="px-8 py-3 bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-medium rounded-full transition-all duration-300"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#121212]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Ishan</h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            If you have an interesting opportunity, you can send (no spam plz
+            🙁) him a message using the form below.
+          </p>
+        </div>
+
+        <div class="max-w-xl mx-auto">
+          <form
+            action="https://formspree.io/f/mzbyqold"
+            method="POST"
+            class="space-y-6"
+          >
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                class="w-full px-4 py-3 bg-[#2d2d2d] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                class="w-full px-4 py-3 bg-[#2d2d2d] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white"
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your message"
+                required
+                rows="5"
+                class="w-full px-4 py-3 bg-[#2d2d2d] border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white"
+              ></textarea>
+            </div>
+            <!-- Hidden elements -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New email from Contact Me Form!"
+            />
+            <input type="hidden" name="_next" value="thanks.html" />
+            <div class="text-center">
+              <button
+                type="submit"
+                class="px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              >
+                Email Ishan
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-12 text-center">
+            <p class="text-gray-400 mb-6">
+              You can also find my personal email, LinkedIn and GitHub below.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-8 mt-8">
+              <div class="text-center">
+                <a href="img/resume.pdf" class="block">
+                  <i
+                    class="fa fa-envelope fa-3x text-purple-500 mb-2 transition-transform duration-300 transform hover:scale-110"
+                  ></i>
+                  <p class="text-sm">
+                    Email -
+                    <span class="text-purple-400 italic font-medium"
+                      >see resume</span
+                    >
+                  </p>
+                </a>
+              </div>
+
+              <div class="text-center">
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  class="block"
+                >
+                  <i
+                    class="fa fa-linkedin-square fa-3x text-purple-500 mb-2 transition-transform duration-300 transform hover:scale-110"
+                  ></i>
+                  <p class="text-sm text-purple-400">LinkedIn</p>
+                </a>
+              </div>
+
+              <div class="text-center">
+                <a href="https://github.com/Ishan5hrestha" class="block">
+                  <i
+                    class="fa fa-github-square fa-3x text-purple-500 mb-2 transition-transform duration-300 transform hover:scale-110"
+                  ></i>
+                  <p class="text-sm text-purple-400">GitHub</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-[#0a0a0a]">
+      <div class="container mx-auto px-4">
+        <p class="text-center text-gray-500 text-sm mb-1">
+          Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>. All
+          rights reserved. Powered by
+          <a
+            href="http://www.tailwindcss.com/"
+            class="text-purple-400 hover:text-purple-300"
+            >Tailwind CSS</a
+          >.
+        </p>
+        <p class="text-center text-gray-500 text-xs">
+          Source on
+          <a
+            href="https://github.com/JasonD94/jasond94.github.io"
+            class="text-purple-400 hover:text-purple-300"
+            >GitHub</a
+          >. Original theme based on the
+          <a
+            href="http://startbootstrap.com/template-overviews/creative/"
+            class="text-purple-400 hover:text-purple-300"
+            >Creative Bootstrap Theme</a
+          >
+          by
+          <a
+            href="http://startbootstrap.com/"
+            class="text-purple-400 hover:text-purple-300"
+            >Start Bootstrap</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Navbar color change on scroll
+      const mainNav = document.getElementById("mainNav");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          mainNav.classList.add("py-2");
+          mainNav.classList.remove("py-4");
+          mainNav.classList.add("shadow-md");
+        } else {
+          mainNav.classList.add("py-4");
+          mainNav.classList.remove("py-2");
+          mainNav.classList.remove("shadow-md");
+        }
+      });
+
+      // Copyright year
+      document.getElementById("copyright-year").innerHTML =
+        new Date().getFullYear();
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for navbar height
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
