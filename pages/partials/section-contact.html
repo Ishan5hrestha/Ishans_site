@@ -1,0 +1,200 @@
+    <!-- Contact: same card shell as home -->
+    <section id="contact" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div
+        class="contact-section-frame w-full flex items-center justify-center px-3 py-3 md:py-4 min-h-0"
+      >
+        <div class="business-card business-card--contact group my-1 md:my-2">
+          <div class="card-artifacts" aria-hidden="true">
+            <div class="card-artifact-mesh"></div>
+            <div class="card-artifact-orb card-artifact-orb--a"></div>
+            <div class="card-artifact-orb card-artifact-orb--b"></div>
+            <div class="card-artifact-orb card-artifact-orb--c"></div>
+            <div class="card-artifact-ring"></div>
+            <span class="card-artifact-shard card-artifact-shard--1"></span>
+            <span class="card-artifact-shard card-artifact-shard--2"></span>
+            <span class="card-artifact-shard card-artifact-shard--3"></span>
+          </div>
+          <div class="card-shine"></div>
+
+          <div class="business-card-body">
+            <header class="contact-card-header text-center md:text-left">
+              <h2
+                class="text-2xl md:text-3xl font-bold tracking-tight embossed-text"
+              >
+                Get in touch
+              </h2>
+              <div
+                class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-1.5 md:mt-2 mb-2 md:mb-2.5"
+              ></div>
+              <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
+                Quick note or project idea — fields marked
+                <span class="text-blue-400">*</span> are required.
+              </p>
+            </header>
+
+            <form
+              id="contact-form"
+              class="mt-3 md:mt-4 space-y-3"
+              action="https://formspree.io/f/mzbyqold"
+              method="POST"
+              novalidate
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-x-4">
+                <div class="sm:col-span-1">
+                  <label
+                    for="contact-name"
+                    class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                    >Name <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="Your name"
+                    class="contact-input w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500"
+                    aria-required="true"
+                    aria-describedby="contact-name-hint"
+                  >
+                  <p id="contact-name-hint" class="sr-only">
+                    Name must be between 2 and 120 characters.
+                  </p>
+                </div>
+
+                <div class="sm:col-span-1">
+                  <label
+                    for="contact-email"
+                    class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                    >Email <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                    maxlength="254"
+                    placeholder="you@example.com"
+                    class="contact-input w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500"
+                    aria-required="true"
+                    aria-describedby="contact-email-hint"
+                  >
+                  <p id="contact-email-hint" class="sr-only">
+                    Use a valid email address you check regularly.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="contact-message"
+                  class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                  >Message <span class="text-blue-400">*</span></label
+                >
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  minlength="20"
+                  maxlength="5000"
+                  rows="3"
+                  placeholder="How can I help?"
+                  class="contact-input contact-input--message w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500 resize-y"
+                  aria-required="true"
+                  aria-describedby="contact-message-hint"
+                ></textarea>
+                <p id="contact-message-hint" class="sr-only">
+                  Message must be at least 20 characters, up to 5000 characters.
+                </p>
+              </div>
+
+              <p
+                id="contact-form-error"
+                class="hidden text-base text-red-400"
+                role="alert"
+              ></p>
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New email from Contact Me Form!"
+              >
+              <input type="hidden" name="_next" value="thanks.html" >
+
+              <button
+                type="submit"
+                class="flex items-center justify-center w-full px-4 py-2.5 md:py-3 text-sm md:text-base font-medium bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/20"
+              >
+                <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i>
+                Send message
+              </button>
+            </form>
+
+            <div class="contact-foot-icons" aria-label="More ways to connect">
+              <div class="contact-foot-icons-row">
+                <a
+                  href="mailto:ishanshrestha@gmail.com"
+                  class="contact-foot-icon-link"
+                  aria-label="Email ishanshrestha@gmail.com"
+                  title="Email"
+                >
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                >
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://www.fiverr.com/ishan498"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link contact-foot-icon-link--fiverr"
+                  aria-label="Fiverr — ishan498"
+                  title="Fiverr"
+                >
+                  fi
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://upwork.com/freelancers/ishanshrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link contact-foot-icon-link--upwork"
+                  aria-label="Upwork — ishanshrestha"
+                  title="Upwork"
+                >
+                  up
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

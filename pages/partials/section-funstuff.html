@@ -1,0 +1,315 @@
+    <!-- Fun: pick 3D (ArtStation) or games (itch.io grid) -->
+    <section id="funstuff" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="relative w-full max-w-6xl mx-auto px-4 py-10 md:py-12">
+        <header
+          class="mb-8 md:mb-10 pb-8 border-b border-slate-700/50 text-center md:text-left"
+        >
+          <h2
+            class="text-2xl md:text-3xl font-bold tracking-tight embossed-text"
+          >
+            Fun stuff
+          </h2>
+          <div
+            class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-3 mb-3"
+          ></div>
+          <p
+            class="text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0"
+          >
+            Side projects: 3D on ArtStation, small games on itch.io, plus design
+            on
+            <a
+              href="https://www.behance.net/ishan-shrestha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 font-medium"
+              >Behance</a
+            >
+            and
+            <a
+              href="https://dribbble.com/ishan5hrestha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 font-medium"
+              >Dribbble</a
+            >.
+          </p>
+          <div
+            class="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4"
+          >
+            <a
+              href="https://www.behance.net/ishan-shrestha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-slate-600/60 bg-slate-900/50 px-3 py-2 text-xs font-medium text-slate-200 hover:border-blue-500/45 hover:text-white transition-colors"
+            >
+              <i class="fa fa-behance text-blue-400" aria-hidden="true"></i>
+              Behance
+            </a>
+            <a
+              href="https://dribbble.com/ishan5hrestha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-slate-600/60 bg-slate-900/50 px-3 py-2 text-xs font-medium text-slate-200 hover:border-blue-500/45 hover:text-white transition-colors"
+            >
+              <i class="fa fa-dribbble text-pink-400" aria-hidden="true"></i>
+              Dribbble
+            </a>
+          </div>
+          <div class="warhammer-quote max-w-3xl mx-auto md:mx-0 mt-6 text-left">
+            &quot;Walk softly and carry a big gun.&quot;
+          </div>
+        </header>
+
+        <!-- Two primary tracks: 3D (link) · Games (expand) -->
+        <div class="fun-hero-grid">
+          <a
+            href="https://www.artstation.com/mutton"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fun-hero-tile fun-hero-tile--3d group"
+            aria-label="3D modelling — open ArtStation portfolio"
+          >
+            <div class="fun-hero-tile__media">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/037/202/421/large/ishan-shrestha-earth.jpg?1619756580"
+                alt=""
+                width="640"
+                height="360"
+                class="fun-hero-tile__img"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="fun-hero-tile__badge" aria-hidden="true">
+                <i class="fa fa-external-link"></i>
+              </span>
+            </div>
+            <div class="fun-hero-tile__body">
+              <div class="fun-hero-tile__kicker">Portfolio</div>
+              <h3 class="fun-hero-tile__title">3D modelling</h3>
+              <p class="fun-hero-tile__desc">
+                Renders and WIP on ArtStation — opens in a new tab.
+              </p>
+            </div>
+          </a>
+
+          <button
+            type="button"
+            id="fun-games-toggle"
+            class="fun-hero-tile fun-hero-tile--games"
+            aria-expanded="false"
+            aria-controls="fun-games-panel"
+          >
+            <div class="fun-hero-tile__media fun-hero-tile__media--games">
+              <div class="fun-hero-tile__games-icon-wrap" aria-hidden="true">
+                <i class="fa fa-gamepad fun-hero-tile__games-icon"></i>
+              </div>
+            </div>
+            <div class="fun-hero-tile__body">
+              <div class="fun-hero-tile__kicker">itch.io · Makalu</div>
+              <h3 class="fun-hero-tile__title">Game making</h3>
+              <p class="fun-hero-tile__desc">
+                Six playable prototypes — click to show the list, then open any
+                title.
+              </p>
+              <span class="fun-hero-tile__hint">
+                <span id="fun-games-hint-text">Show games</span>
+                <i
+                  class="fa fa-chevron-down fun-hero-tile__chevron"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </div>
+          </button>
+        </div>
+
+        <div id="fun-games-panel" class="fun-games-panel" hidden>
+          <div class="fun-games-panel__head">
+            <h3 class="fun-games-panel__title">
+              <i class="fa fa-gamepad text-blue-400 mr-2" aria-hidden="true"></i>
+              Games
+            </h3>
+            <p class="fun-games-panel__sub">
+              Each card links to
+              <a
+                href="https://300.itch.io/"
+                class="text-blue-400 hover:text-blue-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                >300.itch.io</a
+              >.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6"
+          >
+            <!-- Each card is one link (URLs from 300.itch.io) -->
+            <a
+              href="https://300.itch.io/tower-defense-quiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Tower Defense Quiz on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-blue-950"
+              >
+                <i
+                  class="fa fa-crosshairs text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Action · Browser</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Tower Defense Quiz</h4>
+                <p class="github-repo-desc">
+                  Answer correctly to defend — quiz-meets-tower-defense in the
+                  browser.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/gurkhaxtreme"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open GurkhaXtreme on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-indigo-950"
+              >
+                <i
+                  class="fa fa-rocket text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Platformer</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">GurkhaXtreme</h4>
+                <p class="github-repo-desc">
+                  Update of Gurkha with streamlined controls (no mouse control).
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/dont-loose-control"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Dont Loose Control on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-cyan-950"
+              >
+                <i
+                  class="fa fa-globe text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Rover</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Dont Loose Control</h4>
+                <p class="github-repo-desc">
+                  Pilot a rover across different planets — keep it under control.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/gurkha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open GURKHA on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-slate-900"
+              >
+                <i
+                  class="fa fa-bolt text-4xl text-amber-500/30"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Action</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">GURKHA</h4>
+                <p class="github-repo-desc">
+                  Gurkha fighting jellyfish — fast arcade action.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/deep-space"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Deep Space on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-[#0a0f1a] via-[#0f172a] to-slate-950"
+              >
+                <i
+                  class="fa fa-star text-4xl text-sky-400/25"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Arcade</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Deep Space</h4>
+                <p class="github-repo-desc">
+                  Another Makalu release on itch.io — play on the project page.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/achtung-panzer"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Achtung Panzer on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-stone-950 via-[#1c1917] to-slate-900"
+              >
+                <i
+                  class="fa fa-shield text-4xl text-slate-500/40"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Shooter · WW2</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Achtung Panzer</h4>
+                <p class="github-repo-desc">
+                  Top-down tank shooter set in World War II.
+                </p>
+              </div>
+            </a>
+          </div>        </div>
+      </div>
+    </section>

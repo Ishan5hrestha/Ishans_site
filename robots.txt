@@ -1,0 +1,12 @@
+# Ishan Shrestha — https://ishans.com.np/
+# Served on custom domain (CNAME). Update this host if DNS / canonical URL changes.
+User-agent: *
+Allow: /
+
+# Fetch-injected HTML fragments; not meant as standalone documents
+Disallow: /pages/partials/
+
+# Dev / archive copy
+Disallow: /pages/homepage_backup.html
+
+Sitemap: https://ishans.com.np/sitemap.xml

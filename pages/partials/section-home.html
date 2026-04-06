@@ -1,0 +1,253 @@
+    <section id="home" class="section active">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <!-- Deep-space ambience behind the card (stars · nebulae · black holes) -->
+      <div class="home-cosmos" aria-hidden="true">
+        <div class="home-cosmos-stars home-cosmos-stars--field-a"></div>
+        <div class="home-cosmos-stars home-cosmos-stars--field-b"></div>
+        <div class="home-cosmos-nebula home-cosmos-nebula--a"></div>
+        <div class="home-cosmos-nebula home-cosmos-nebula--b"></div>
+        <div class="home-cosmos-blackhole home-cosmos-blackhole--tr"></div>
+        <div class="home-cosmos-blackhole home-cosmos-blackhole--bl"></div>
+      </div>
+
+      <div
+        class="home-section-inner w-full h-full flex items-center justify-center px-4 pt-[max(0.75rem,env(safe-area-inset-top))]"
+      >
+        <div class="business-card group">
+          <div class="card-artifacts" aria-hidden="true">
+            <div class="card-artifact-mesh"></div>
+            <div class="card-artifact-orb card-artifact-orb--a"></div>
+            <div class="card-artifact-orb card-artifact-orb--b"></div>
+            <div class="card-artifact-orb card-artifact-orb--c"></div>
+            <div class="card-artifact-ring"></div>
+            <span class="card-artifact-shard card-artifact-shard--1"></span>
+            <span class="card-artifact-shard card-artifact-shard--2"></span>
+            <span class="card-artifact-shard card-artifact-shard--3"></span>
+          </div>
+          <div class="card-shine"></div>
+
+          <div class="business-card-body">
+          <!-- Profile Image + intro video trigger -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-3 mb-3 md:gap-5 md:mb-5"
+          >
+            <button
+              type="button"
+              id="home-video-open"
+              class="home-avatar-trigger relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-glow p-0 cursor-pointer bg-slate-900 text-left border-solid"
+              aria-haspopup="dialog"
+              aria-controls="home-video-modal"
+              aria-label="Play intro video"
+            >
+              <img
+                src="https://avatars.githubusercontent.com/u/45944370?v=4"
+                alt=""
+                draggable="false"
+                class="w-full h-full object-cover pointer-events-none"
+              >
+              <span class="home-avatar-play-overlay" aria-hidden="true">
+                <span class="home-avatar-play-ring"></span>
+                <i class="fa fa-play home-avatar-play-icon" aria-hidden="true"></i>
+              </span>
+            </button>
+
+            <div
+              class="warhammer-quote hidden md:block mb-0 md:mb-4 w-full"
+            >
+              "Blessed is the mind too small for doubt."
+            </div>
+          </div>
+
+          <div class="mb-3 md:mb-6">
+            <h1
+              class="text-2xl md:text-4xl font-bold mb-1 md:mb-2 tracking-tight embossed-text"
+            >
+              Ishan Shrestha
+            </h1>
+            <div
+              class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mb-1.5 md:mb-2.5"
+            ></div>
+            <div
+              class="flex flex-row flex-wrap items-center justify-between gap-x-2 gap-y-1.5 mb-1.5 md:mb-2.5"
+            >
+              <p class="text-base md:text-xl text-blue-300 mb-0">
+                Software Merchant
+              </p>
+              <div class="home-title-socials flex items-center gap-2 md:gap-2.5 shrink-0">
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.behance.net/ishan-shrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn home-title-social-btn--behance"
+                  aria-label="Behance portfolio"
+                  title="Behance"
+                >
+                  <i class="fa fa-behance" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://dribbble.com/ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn home-title-social-btn--dribbble"
+                  aria-label="Dribbble profile"
+                  title="Dribbble"
+                >
+                  <i class="fa fa-dribbble" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+              Delivering digital solutions that matter. I source and develop the
+              software you need.
+            </p>
+          </div>
+
+          <div class="home-card-contact-links">
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full bg-blue-900 flex items-center justify-center mr-2 md:mr-3"
+                >
+                  <i class="fa fa-envelope text-blue-200 text-sm md:text-base"></i>
+                </div>
+                <a
+                  href="mailto:ishanshrestha@gmail.com"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  ishanshrestha@gmail.com
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full bg-blue-900 flex items-center justify-center mr-2 md:mr-3"
+                >
+                  <i class="fa fa-linkedin text-blue-200 text-sm md:text-base"></i>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  linkedin.com/in/ishanshrestha
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="home-fiverr-icon-wrap w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full flex items-center justify-center mr-2 md:mr-3"
+                  aria-hidden="true"
+                >
+                  <span class="home-fiverr-mark">fi</span>
+                </div>
+                <a
+                  href="https://www.fiverr.com/ishan498"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  fiverr.com/ishan498
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="home-upwork-icon-wrap w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full flex items-center justify-center mr-2 md:mr-3"
+                  aria-hidden="true"
+                >
+                  <span class="home-upwork-mark">up</span>
+                </div>
+                <a
+                  href="https://upwork.com/freelancers/ishanshrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  upwork.com/freelancers/ishanshrestha
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book a Call Button -->
+          <div class="home-card-actions flex flex-col gap-2 sm:flex-row sm:space-x-3 sm:gap-0">
+            <a
+              href="https://calendly.com/ishanshrestha/consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="home-card-action-primary flex items-center justify-center px-4 py-2 md:px-6 md:py-3 text-sm md:text-base bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/20 w-full"
+            >
+              <i class="fa fa-calendar mr-2"></i>
+              Book a Call
+            </a>
+
+            <button
+              type="button"
+              id="explore-button"
+              class="home-card-action-secondary px-4 py-2 md:px-6 md:py-3 text-sm md:text-base bg-transparent border-2 border-blue-500/50 text-blue-400 rounded-lg hover:bg-blue-900/20 hover:border-blue-400 transition-all transform hover:-translate-y-1 w-full"
+            >
+              Explore Services
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video lightbox (moved to document.body on load — see homepage.js) -->
+      <div
+        id="home-video-modal"
+        class="home-video-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="home-video-modal-title"
+        hidden
+      >
+        <div class="home-video-modal__backdrop" data-home-video-close="true"></div>
+        <div class="home-video-modal__inner">
+          <h2 id="home-video-modal-title" class="sr-only">Intro video</h2>
+          <button
+            type="button"
+            class="home-video-modal__close"
+            data-home-video-close="true"
+            aria-label="Close video"
+          >
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <video
+            id="home-intro-video"
+            class="home-video-modal__video"
+            controls
+            playsinline
+            preload="metadata"
+            src="../assets/videos/Gen AI Small.mp4"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
