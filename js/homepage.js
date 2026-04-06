@@ -630,6 +630,259 @@
     });
   }
 
+  /** Fiverr profile opened when the review toast is clicked. */
+  var FIVERR_PROFILE_URL = "https://www.fiverr.com/ishan498";
+
+  /**
+   * Returns an integer in [min, max] inclusive.
+   * @param {number} min
+   * @param {number} max
+   * @returns {number}
+   */
+  function randomIntInclusive(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  /**
+   * Builds two-letter initials from a reviewer display name.
+   * @param {string} name
+   * @returns {string}
+   */
+  function fiverrReviewerInitials(name) {
+    var trimmed = String(name || "").trim();
+    if (!trimmed) {
+      return "?";
+    }
+    var parts = trimmed.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) {
+      var firstChar = parts[0].charAt(0);
+      var lastChar = parts[parts.length - 1].charAt(0);
+      return (firstChar + lastChar).toUpperCase();
+    }
+    var single = parts[0];
+    if (single.length >= 2) {
+      return single.slice(0, 2).toUpperCase();
+    }
+    return single.charAt(0).toUpperCase();
+  }
+
+  /**
+   * Fetches review copy from JSON, then shows a toast on a timer:
+   * first after 15–20s, visible 9s (timer pauses while hovering the toast),
+   * then every 50–60s. Click opens Fiverr.
+   * @returns {void}
+   */
+  function initFiverrReviewToasts() {
+    var reviewsUrl = new URL("../js/fiverr-reviews.json", window.location.href);
+    var hideMs = 9000;
+    var hideTransitionMs = 380;
+
+    fetch(reviewsUrl)
+      .then(function (res) {
+        if (!res.ok) {
+          throw new Error("HTTP " + String(res.status));
+        }
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data || !Array.isArray(data) || data.length === 0) {
+          return;
+        }
+
+        /** @type {Array<{ name: string, handle: string, text: string, stars: number }>} */
+        var reviews = [];
+        for (var i = 0; i < data.length; i += 1) {
+          var raw = data[i];
+          if (!raw || typeof raw !== "object") {
+            continue;
+          }
+          var n = raw.name;
+          var t = raw.text;
+          var s = raw.stars;
+          var h = raw.handle;
+          if (typeof n !== "string" || typeof t !== "string") {
+            continue;
+          }
+          if (typeof s !== "number" || s < 1 || s > 5 || s !== Math.floor(s)) {
+            continue;
+          }
+          var handleStr = typeof h === "string" ? h : "";
+          reviews.push({
+            name: n,
+            handle: handleStr,
+            text: t,
+            stars: s,
+          });
+        }
+        if (reviews.length === 0) {
+          return;
+        }
+
+        var lastIndex = -1;
+        var showTimerId = 0;
+        var hideTimerId = 0;
+        var exitTimerId = 0;
+        /** @type {HTMLElement | null} */
+        var currentEl = null;
+
+        function clearTimers() {
+          if (showTimerId) {
+            window.clearTimeout(showTimerId);
+            showTimerId = 0;
+          }
+          if (hideTimerId) {
+            window.clearTimeout(hideTimerId);
+            hideTimerId = 0;
+          }
+          if (exitTimerId) {
+            window.clearTimeout(exitTimerId);
+            exitTimerId = 0;
+          }
+        }
+
+        function pickReview() {
+          var idx = 0;
+          if (reviews.length > 1) {
+            do {
+              idx = randomIntInclusive(0, reviews.length - 1);
+            } while (idx === lastIndex);
+          }
+          lastIndex = idx;
+          return reviews[idx];
+        }
+
+        function removeToastEl(el) {
+          if (el && el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+          if (currentEl === el) {
+            currentEl = null;
+          }
+        }
+
+        function scheduleNextShow(delayMs) {
+          if (showTimerId) {
+            window.clearTimeout(showTimerId);
+          }
+          showTimerId = window.setTimeout(function () {
+            showTimerId = 0;
+            showToast();
+          }, delayMs);
+        }
+
+        /**
+         * Runs hide animation, then removes the node and schedules the next toast.
+         * @param {HTMLElement} wrap
+         * @returns {void}
+         */
+        function beginDismissSequence(wrap) {
+          if (!wrap.parentNode) {
+            return;
+          }
+          wrap.classList.remove("fiverr-review-toast--visible");
+          wrap.classList.add("fiverr-review-toast--hiding");
+          exitTimerId = window.setTimeout(function () {
+            exitTimerId = 0;
+            removeToastEl(wrap);
+            scheduleNextShow(randomIntInclusive(50000, 60000));
+          }, hideTransitionMs);
+        }
+
+        /**
+         * (Re)starts the auto-hide countdown for the current toast.
+         * @param {HTMLElement} wrap
+         * @returns {void}
+         */
+        function scheduleAutoHide(wrap) {
+          if (hideTimerId) {
+            window.clearTimeout(hideTimerId);
+            hideTimerId = 0;
+          }
+          hideTimerId = window.setTimeout(function () {
+            hideTimerId = 0;
+            beginDismissSequence(wrap);
+          }, hideMs);
+        }
+
+        function showToast() {
+          clearTimers();
+          if (currentEl) {
+            removeToastEl(currentEl);
+          }
+
+          var r = pickReview();
+          var wrap = document.createElement("div");
+          wrap.className = "fiverr-review-toast";
+          wrap.setAttribute("role", "status");
+          wrap.setAttribute("aria-live", "polite");
+
+          var link = document.createElement("a");
+          link.className = "fiverr-review-toast__link";
+          link.href = FIVERR_PROFILE_URL;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.setAttribute(
+            "aria-label",
+            "View Ishan's Fiverr profile (opens in a new tab)"
+          );
+
+          var avatar = document.createElement("div");
+          avatar.className = "fiverr-review-toast__avatar";
+          avatar.setAttribute("aria-hidden", "true");
+          avatar.textContent = fiverrReviewerInitials(r.name);
+
+          var body = document.createElement("div");
+          body.className = "fiverr-review-toast__body";
+
+          var headline = document.createElement("p");
+          headline.className = "fiverr-review-toast__headline";
+          headline.textContent =
+            "Ishan received a " + String(r.stars) + " star review:";
+
+          var who = document.createElement("p");
+          who.className = "fiverr-review-toast__who";
+          var handleClean = r.handle.replace(/^@+/, "");
+          who.textContent =
+            r.name.trim() + (handleClean ? " @" + handleClean : "");
+
+          var quote = document.createElement("p");
+          quote.className = "fiverr-review-toast__quote";
+          quote.textContent = "\"" + r.text.trim() + "\"";
+
+          body.appendChild(headline);
+          body.appendChild(who);
+          body.appendChild(quote);
+          link.appendChild(avatar);
+          link.appendChild(body);
+          wrap.appendChild(link);
+          document.body.appendChild(wrap);
+          currentEl = wrap;
+
+          window.requestAnimationFrame(function () {
+            wrap.classList.add("fiverr-review-toast--visible");
+          });
+
+          link.addEventListener("mouseenter", function onToastEnter() {
+            if (hideTimerId) {
+              window.clearTimeout(hideTimerId);
+              hideTimerId = 0;
+            }
+          });
+
+          link.addEventListener("mouseleave", function onToastLeave() {
+            scheduleAutoHide(wrap);
+          });
+
+          scheduleAutoHide(wrap);
+        }
+
+        scheduleNextShow(randomIntInclusive(15000, 20000));
+      })
+      .catch(function () {
+        /* Silent: no toast if JSON missing or invalid (e.g. file:// quirks). */
+      });
+  }
+
   /**
    * Binds all interactive behavior after fragments are in the DOM.
    */
@@ -730,6 +983,7 @@
     initProjectInquiryModal();
     initHomeVideoModal();
     initFunGamesPanel();
+    initFiverrReviewToasts();
 
     if (typeof window.tailwind !== "undefined") {
       var refresh = window.tailwind.refresh;

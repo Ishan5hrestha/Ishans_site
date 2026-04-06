@@ -1450,6 +1450,45 @@ a.github-repo-card:focus-visible {
   flex: 1;
 }
 
+.service-card-pro-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.service-card-pro-portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.service-card-pro-portfolio-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.service-card-pro-portfolio-link--dribbble {
+  color: #f472b6;
+}
+
+.service-card-pro-portfolio-link--dribbble:hover {
+  color: #f9a8d4;
+}
+
+.service-card-pro-portfolio-sep {
+  color: #475569;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
 /* Full-width footer CTA bar (shared shape; color via modifier) */
 .service-card-pro--flush-cta {
   padding-bottom: 0;
@@ -2573,4 +2612,155 @@ a.fun-hero-tile:hover .fun-hero-tile__img {
   .fun-games-panel {
     animation: none;
   }
+
+  .fiverr-review-toast {
+    transition: opacity 0.2s ease;
+  }
+
+  .fiverr-review-toast--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fiverr-review-toast--hiding {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Fiverr review toast (below modals z-index 200 / 260) */
+.fiverr-review-toast {
+  position: fixed;
+  z-index: 150;
+  right: max(0.75rem, env(safe-area-inset-right, 0px));
+  width: min(20.5rem, calc(100vw - 1.5rem));
+  max-width: 20.5rem;
+  pointer-events: none;
+  box-sizing: border-box;
+  transform: translate3d(0, 120%, 0);
+  opacity: 0;
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.38s ease;
+}
+
+.fiverr-review-toast--visible {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.fiverr-review-toast--hiding {
+  transform: translate3d(0, 110%, 0);
+  opacity: 0;
+}
+
+/* Desktop: bottom-right, enter/exit from below */
+@media (min-width: 768px) {
+  .fiverr-review-toast {
+    top: auto;
+    bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+    transform: translate3d(0, 120%, 0);
+  }
+
+  .fiverr-review-toast--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fiverr-review-toast--hiding {
+    transform: translate3d(0, 110%, 0);
+  }
+}
+
+/* Mobile: top edge (avoids nav bar), enter/exit from above */
+@media (max-width: 767px) {
+  .fiverr-review-toast {
+    top: max(0.75rem, env(safe-area-inset-top, 0px));
+    bottom: auto;
+    transform: translate3d(0, -130%, 0);
+  }
+
+  .fiverr-review-toast--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fiverr-review-toast--hiding {
+    transform: translate3d(0, -130%, 0);
+  }
+}
+
+.fiverr-review-toast__link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0.9rem;
+  text-decoration: none;
+  color: inherit;
+  pointer-events: auto;
+  border-radius: 0.5rem;
+  background: #111827;
+  border: 1px solid #374151;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.fiverr-review-toast__link:hover {
+  background: #1f2937;
+  border-color: #4b5563;
+}
+
+.fiverr-review-toast__link:focus-visible {
+  outline: 2px solid #9ca3af;
+  outline-offset: 2px;
+}
+
+.fiverr-review-toast__avatar {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e5e7eb;
+  background: #374151;
+  border: 1px solid #4b5563;
+}
+
+.fiverr-review-toast__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.fiverr-review-toast__headline {
+  margin: 0 0 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.fiverr-review-toast__who {
+  margin: 0 0 0.3rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.fiverr-review-toast__quote {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

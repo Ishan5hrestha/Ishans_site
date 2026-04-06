@@ -3,20 +3,17 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <title>Ishan's Site</title>
-    <link rel="stylesheet" href="splash_style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ishan&apos;s Site</title>
+    <link rel="stylesheet" href="splash_style.css">
   </head>
-  <body translate="no">
-    <div class="load" aria-hidden="false">
-      <div class="crt-bezel">
-        <div class="crt-glass">
-          <div class="crt-noise" aria-hidden="true"></div>
-          <pre class="term">parewa@gudugudu:~$ </pre>
-        </div>
+  <body>
+    <div id="splash-root" class="splash">
+      <div class="splash-inner">
+        <p class="splash-connect" id="splash-connect">Connecting…</p>
+        <p class="splash-word" id="splash-word" aria-live="polite"></p>
       </div>
     </div>
-    <script src="jquery.js"></script>
     <script src="splash.js"></script>
-
   </body>
 </html>
