@@ -1,12 +1,14 @@
 /**
  * Minimal splash: connecting message, rotating technical terms, ~5s then homepage.
+ * Runs after DOMContentLoaded so #splash-root / #splash-word exist even if a host
+ * or CDN serves this script early/async (otherwise getElementById is null and we
+ * would redirect immediately).
  */
 (function () {
   "use strict";
 
   var TOTAL_MS = 5000;
   var EXIT_TRANSITION_MS = 420;
-  var HOME_HREF = "pages/homepage.html";
 
   var TECH_TERMS = [
     "TLS handshake",
@@ -53,45 +55,62 @@
     return arr;
   }
 
-  var root = document.getElementById("splash-root");
-  var wordEl = document.getElementById("splash-word");
-
-  if (!root || !wordEl) {
-    window.location.href = HOME_HREF;
-    return;
+  /**
+   * Resolves homepage URL from current splash URL (correct for subpaths and CDNs).
+   * @returns {string}
+   */
+  function homepageHref() {
+    return new URL("pages/homepage.html", window.location.href).href;
   }
 
-  var startAt = Date.now();
-  var seq = shuffleInPlace(TECH_TERMS.slice()).slice(0, 14);
-  var index = 0;
+  function startSplash() {
+    var root = document.getElementById("splash-root");
+    var wordEl = document.getElementById("splash-word");
+    var homeHref = homepageHref();
 
-  function msLeft() {
-    return TOTAL_MS - (Date.now() - startAt);
-  }
-
-  function showNextTerm() {
-    var left = msLeft();
-    if (left <= EXIT_TRANSITION_MS + 80) {
+    if (!root || !wordEl) {
+      window.location.href = homeHref;
       return;
     }
-    if (index < seq.length) {
-      wordEl.textContent = seq[index];
-      index += 1;
+
+    var startAt = Date.now();
+    var seq = shuffleInPlace(TECH_TERMS.slice()).slice(0, 14);
+    var index = 0;
+
+    function msLeft() {
+      return TOTAL_MS - (Date.now() - startAt);
     }
-    var delay = 240 + Math.floor(Math.random() * 260);
-    if (delay > left - EXIT_TRANSITION_MS - 120) {
-      delay = Math.max(90, left - EXIT_TRANSITION_MS - 120);
+
+    function showNextTerm() {
+      var left = msLeft();
+      if (left <= EXIT_TRANSITION_MS + 80) {
+        return;
+      }
+      if (index < seq.length) {
+        wordEl.textContent = seq[index];
+        index += 1;
+      }
+      var delay = 240 + Math.floor(Math.random() * 260);
+      if (delay > left - EXIT_TRANSITION_MS - 120) {
+        delay = Math.max(90, left - EXIT_TRANSITION_MS - 120);
+      }
+      window.setTimeout(showNextTerm, delay);
     }
-    window.setTimeout(showNextTerm, delay);
+
+    function finish() {
+      root.classList.add("splash--exit");
+      window.setTimeout(function () {
+        window.location.href = homeHref;
+      }, EXIT_TRANSITION_MS);
+    }
+
+    window.setTimeout(showNextTerm, 380);
+    window.setTimeout(finish, TOTAL_MS);
   }
 
-  function finish() {
-    root.classList.add("splash--exit");
-    window.setTimeout(function () {
-      window.location.href = HOME_HREF;
-    }, EXIT_TRANSITION_MS);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startSplash);
+  } else {
+    startSplash();
   }
-
-  window.setTimeout(showNextTerm, 380);
-  window.setTimeout(finish, TOTAL_MS);
 })();
