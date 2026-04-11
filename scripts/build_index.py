@@ -89,7 +89,7 @@ def main() -> None:
 <head>{head_inner}
     <link rel="stylesheet" href="splash_style.css" />
 </head>
-  <body class="bg-[#121212]">
+  <body class="bg-[#121212] has-news-banner">
     <noscript>
       <div
         class="fixed bottom-0 left-0 right-0 z-[100] bg-[#121212]/95 text-gray-300 p-3 text-center text-sm border-t border-blue-900/30"
@@ -108,6 +108,22 @@ def main() -> None:
     </div>
 
     <div id="portfolio-shell">
+    <div
+      class="news-banner"
+      role="region"
+      aria-label="Announcement"
+    >
+      <p class="news-banner__inner">
+        Check out my Nepali TTS project
+        <a
+          href="https://preeti.ishans.com.np"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="news-banner__link"
+          >here</a
+        >.
+      </p>
+    </div>
     <div id="site-nav" aria-busy="true">
 {nav_text}
     </div>
