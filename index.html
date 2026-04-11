@@ -1,19 +1,2836 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://ishans.com.np/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Custom Title Bar -->
     <title>Ishan&apos;s Site</title>
-    <link rel="stylesheet" href="splash_style.css">
-  </head>
-  <body>
-    <div id="splash-root" class="splash">
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
+
+    <!-- Post Hog -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          (window.posthog && window.posthog.__loaded) ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "Ii init Di qi Sr Bi Zi Pi capture calculateEventProperties Yi register register_once register_for_session unregister unregister_for_session Xi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ji identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Wi Vi createPersonProfile setInternalOrTestUser Gi Fi Ki opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $i debug Tr Ui getPageViewId captureTraceFeedback captureTraceMetric Ri".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_ABkeWLdQDRWiLoFfzZVbKXpRh2GZuzGMRSngzq9QgazQ", {
+        api_host: "https://us.i.posthog.com",
+        defaults: "2026-01-30",
+        person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+      });
+    </script>
+
+    <!-- Google fonts - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              dark: {
+                DEFAULT: "#0d1117", // Darker blue-black
+                secondary: "#161b22", // Dark blue
+                accent: "#1f2937", // Blue-gray
+              },
+              accent: {
+                DEFAULT: "#1E40AF", // Strong blue
+                light: "#3B82F6", // Lighter blue
+                dark: "#1E3A8A", // Darker blue
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Page styles (extracted from inline CSS) -->
+    <link rel="stylesheet" href="css/homepage.css" />
+
+    <!-- Custom favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <!-- Google Analytics Tracking Tag -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-68657454-1", "auto");
+      ga("send", "pageview");
+    </script>
+    <!-- TODO: social preview — update URL, image, titles, and descriptions when you are ready -->
+    <meta property="og:url" content="https://ishans.com.np/" />
+    <meta property="og:image" content="https://ishans.com.np/" />
+    <meta
+      property="og:image:alt"
+      content="A Deep Dreamed view of the Middlesex Fells Reservoir in Medford, MA"
+    />
+    <meta property="g:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="Ishan Shrestha" />
+    <meta property="og:title" content="Ishan&apos;s Personal Website" />
+    <meta
+      property="og:description"
+      content="This is Ishan Shrestha&apos;s Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
+    <meta
+      name="description"
+      content="This is Ishan Shrestha&apos;s Personal Website, where he includes college projects, personal side projects and any professional or open source stuff"
+    />
+    <!-- TODO end: social preview -->
+
+    <link rel="stylesheet" href="splash_style.css" />
+</head>
+  <body class="bg-[#121212]">
+    <noscript>
+      <div
+        class="fixed bottom-0 left-0 right-0 z-[100] bg-[#121212]/95 text-gray-300 p-3 text-center text-sm border-t border-blue-900/30"
+      >
+        <p>
+          JavaScript is disabled. Section content is present in this page for reading; enable JavaScript for navigation and interactions.
+        </p>
+      </div>
+    </noscript>
+
+    <div id="splash-root" class="splash splash--overlay">
       <div class="splash-inner">
-        <p class="splash-connect" id="splash-connect">Connecting…</p>
+        <p class="splash-connect" id="splash-connect">Connecting&hellip;</p>
         <p class="splash-word" id="splash-word" aria-live="polite"></p>
       </div>
     </div>
+
+    <div id="portfolio-shell">
+    <div id="site-nav" aria-busy="true">
+    <nav
+      class="nav-rail fixed left-0 top-0 bottom-0 z-50 hidden md:flex"
+      aria-label="Site sections (desktop)"
+    >
+      <div class="nav-rail-brand">
+        <a
+          href="#"
+          id="logo-link"
+          class="text-sm font-bold gradient-text tracking-tight px-1 py-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70"
+          title="Ishan Shrestha — Home"
+          >IS</a
+        >
+      </div>
+
+      <a
+        href="#home"
+        class="nav-dock-link nav-active"
+        data-section="home"
+        aria-current="page"
+        aria-label="Home"
+        title="Home"
+      >
+        <i class="fa fa-home text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Home</span>
+      </a>
+      <a
+        href="#services"
+        class="nav-dock-link"
+        data-section="services"
+        aria-label="Services"
+        title="Services"
+      >
+        <i class="fa fa-cogs text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Services</span>
+      </a>
+      <a
+        href="#experience"
+        class="nav-dock-link"
+        data-section="experience"
+        aria-label="Experience"
+        title="Experience"
+      >
+        <i class="fa fa-briefcase text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Experience</span>
+      </a>
+      <a
+        href="#funstuff"
+        class="nav-dock-link"
+        data-section="funstuff"
+        aria-label="Fun projects"
+        title="Fun"
+      >
+        <i class="fa fa-gamepad text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Fun</span>
+      </a>
+      <a
+        href="#github"
+        class="nav-dock-link"
+        data-section="github"
+        aria-label="GitHub projects"
+        title="GitHub"
+      >
+        <i class="fa fa-github text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">GitHub</span>
+      </a>
+      <a
+        href="#projects"
+        class="nav-dock-link"
+        data-section="projects"
+        aria-label="Projects"
+        title="Projects"
+      >
+        <i class="fa fa-folder-open text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Projects</span>
+      </a>
+      <a
+        href="#contact"
+        class="nav-dock-link"
+        data-section="contact"
+        aria-label="Contact"
+        title="Contact"
+      >
+        <i class="fa fa-envelope text-lg" aria-hidden="true"></i>
+        <span class="nav-dock-tooltip">Contact</span>
+      </a>
+    </nav>
+
+    <!-- Mobile primary navigation: icon strip with short labels -->
+    <nav
+      class="mobile-nav-bar fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-blue-900/25 bg-dark-secondary/95 backdrop-blur-md pb-[env(safe-area-inset-bottom,0)]"
+      aria-label="Site sections (mobile)"
+    >
+      <div class="mobile-nav-bar__links flex items-stretch justify-between max-w-full mx-auto px-0.5 gap-0">
+        <a
+          href="#home"
+          class="nav-mobile-link nav-active"
+          data-section="home"
+          aria-current="page"
+          aria-label="Home"
+        >
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <span>Home</span>
+        </a>
+        <a
+          href="#services"
+          class="nav-mobile-link"
+          data-section="services"
+          aria-label="Services"
+        >
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+          <span>Services</span>
+        </a>
+        <a
+          href="#experience"
+          class="nav-mobile-link"
+          data-section="experience"
+          aria-label="Experience"
+        >
+          <i class="fa fa-briefcase" aria-hidden="true"></i>
+          <span>Work</span>
+        </a>
+        <a
+          href="#funstuff"
+          class="nav-mobile-link"
+          data-section="funstuff"
+          aria-label="Fun projects"
+        >
+          <i class="fa fa-gamepad" aria-hidden="true"></i>
+          <span>Fun</span>
+        </a>
+        <a
+          href="#github"
+          class="nav-mobile-link"
+          data-section="github"
+          aria-label="GitHub projects"
+        >
+          <i class="fa fa-github" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="#projects"
+          class="nav-mobile-link"
+          data-section="projects"
+          aria-label="Portfolio projects"
+        >
+          <i class="fa fa-folder-open" aria-hidden="true"></i>
+          <span>Projects</span>
+        </a>
+        <a
+          href="#contact"
+          class="nav-mobile-link"
+          data-section="contact"
+          aria-label="Contact"
+        >
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+    </nav>
+
+    </div>
+
+    <div id="site-sections" aria-busy="true">
+    <section id="home" class="section active">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <!-- Deep-space ambience behind the card (stars · nebulae · black holes) -->
+      <div class="home-cosmos" aria-hidden="true">
+        <div class="home-cosmos-stars home-cosmos-stars--field-a"></div>
+        <div class="home-cosmos-stars home-cosmos-stars--field-b"></div>
+        <div class="home-cosmos-nebula home-cosmos-nebula--a"></div>
+        <div class="home-cosmos-nebula home-cosmos-nebula--b"></div>
+        <div class="home-cosmos-blackhole home-cosmos-blackhole--tr"></div>
+        <div class="home-cosmos-blackhole home-cosmos-blackhole--bl"></div>
+      </div>
+
+      <div
+        class="home-section-inner w-full h-full flex items-center justify-center px-4 pt-[max(0.75rem,env(safe-area-inset-top))]"
+      >
+        <div class="business-card group">
+          <div class="card-artifacts" aria-hidden="true">
+            <div class="card-artifact-mesh"></div>
+            <div class="card-artifact-orb card-artifact-orb--a"></div>
+            <div class="card-artifact-orb card-artifact-orb--b"></div>
+            <div class="card-artifact-orb card-artifact-orb--c"></div>
+            <div class="card-artifact-ring"></div>
+            <span class="card-artifact-shard card-artifact-shard--1"></span>
+            <span class="card-artifact-shard card-artifact-shard--2"></span>
+            <span class="card-artifact-shard card-artifact-shard--3"></span>
+          </div>
+          <div class="card-shine"></div>
+
+          <div class="business-card-body">
+          <!-- Profile Image + intro video trigger -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-3 mb-3 md:gap-5 md:mb-5"
+          >
+            <button
+              type="button"
+              id="home-video-open"
+              class="home-avatar-trigger relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-glow p-0 cursor-pointer bg-slate-900 text-left border-solid"
+              aria-haspopup="dialog"
+              aria-controls="home-video-modal"
+              aria-label="Play intro video"
+            >
+              <img
+                src="https://avatars.githubusercontent.com/u/45944370?v=4"
+                alt=""
+                draggable="false"
+                class="w-full h-full object-cover pointer-events-none"
+              >
+              <span class="home-avatar-play-overlay" aria-hidden="true">
+                <span class="home-avatar-play-ring"></span>
+                <i class="fa fa-play home-avatar-play-icon" aria-hidden="true"></i>
+              </span>
+            </button>
+
+            <div
+              class="warhammer-quote hidden md:block mb-0 md:mb-4 w-full"
+            >
+              "Blessed is the mind too small for doubt."
+            </div>
+          </div>
+
+          <div class="mb-3 md:mb-6">
+            <h1
+              class="text-2xl md:text-4xl font-bold mb-1 md:mb-2 tracking-tight embossed-text"
+            >
+              Ishan Shrestha
+            </h1>
+            <div
+              class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mb-1.5 md:mb-2.5"
+            ></div>
+            <div
+              class="flex flex-row flex-wrap items-center justify-between gap-x-2 gap-y-1.5 mb-1.5 md:mb-2.5"
+            >
+              <p class="text-base md:text-xl text-blue-300 mb-0">
+                Software Merchant
+              </p>
+              <div class="home-title-socials flex items-center gap-2 md:gap-2.5 shrink-0">
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.behance.net/ishan-shrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn home-title-social-btn--behance"
+                  aria-label="Behance portfolio"
+                  title="Behance"
+                >
+                  <i class="fa fa-behance" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://dribbble.com/ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home-title-social-btn home-title-social-btn--dribbble"
+                  aria-label="Dribbble profile"
+                  title="Dribbble"
+                >
+                  <i class="fa fa-dribbble" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+              Delivering digital solutions that matter. I source and develop the
+              software you need.
+            </p>
+          </div>
+
+          <div class="home-card-contact-links">
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full bg-blue-900 flex items-center justify-center mr-2 md:mr-3"
+                >
+                  <i class="fa fa-envelope text-blue-200 text-sm md:text-base"></i>
+                </div>
+                <a
+                  href="mailto:ishanshrestha@gmail.com"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  ishanshrestha@gmail.com
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full bg-blue-900 flex items-center justify-center mr-2 md:mr-3"
+                >
+                  <i class="fa fa-linkedin text-blue-200 text-sm md:text-base"></i>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  linkedin.com/in/ishanshrestha
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="home-fiverr-icon-wrap w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full flex items-center justify-center mr-2 md:mr-3"
+                  aria-hidden="true"
+                >
+                  <span class="home-fiverr-mark">fi</span>
+                </div>
+                <a
+                  href="https://www.fiverr.com/ishan498"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  fiverr.com/ishan498
+                </a>
+              </div>
+            </div>
+            <div
+              class="metallic-emboss home-card-contact-row group-hover:bg-opacity-10 transition-all"
+            >
+              <div class="flex items-center min-w-0">
+                <div
+                  class="home-upwork-icon-wrap w-7 h-7 md:w-8 md:h-8 shrink-0 rounded-full flex items-center justify-center mr-2 md:mr-3"
+                  aria-hidden="true"
+                >
+                  <span class="home-upwork-mark">up</span>
+                </div>
+                <a
+                  href="https://upwork.com/freelancers/ishanshrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all leading-snug"
+                >
+                  upwork.com/freelancers/ishanshrestha
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book a Call Button -->
+          <div class="home-card-actions flex flex-col gap-2 sm:flex-row sm:space-x-3 sm:gap-0">
+            <a
+              href="https://calendly.com/ishanshrestha/consultation"
+              data-book-call="true"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="home-card-action-primary flex items-center justify-center px-4 py-2 md:px-6 md:py-3 text-sm md:text-base bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/20 w-full"
+            >
+              <i class="fa fa-calendar mr-2"></i>
+              Book a Call
+            </a>
+
+            <button
+              type="button"
+              id="explore-button"
+              class="home-card-action-secondary px-4 py-2 md:px-6 md:py-3 text-sm md:text-base bg-transparent border-2 border-blue-500/50 text-blue-400 rounded-lg hover:bg-blue-900/20 hover:border-blue-400 transition-all transform hover:-translate-y-1 w-full"
+            >
+              Explore Services
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video lightbox (moved to document.body on load — see homepage.js) -->
+      <div
+        id="home-video-modal"
+        class="home-video-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="home-video-modal-title"
+        hidden
+      >
+        <div class="home-video-modal__backdrop" data-home-video-close="true"></div>
+        <div class="home-video-modal__inner">
+          <h2 id="home-video-modal-title" class="sr-only">Intro video</h2>
+          <button
+            type="button"
+            class="home-video-modal__close"
+            data-home-video-close="true"
+            aria-label="Close video"
+          >
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <video
+            id="home-intro-video"
+            class="home-video-modal__video"
+            controls
+            playsinline
+            preload="metadata"
+            src="/assets/videos/Gen AI Small.mp4"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services: slate cards, blue accents — aligned with GitHub / experience -->
+    <section id="services" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="relative w-full max-w-6xl mx-auto px-4 py-5 md:py-7">
+        <header
+          class="mb-5 md:mb-6 pb-4 border-b border-slate-700/50 text-center md:text-left"
+        >
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-white tracking-tight"
+          >
+            Services
+          </h2>
+          <div
+            class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-2 mb-2"
+          ></div>
+          <p
+            class="text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-0"
+          >
+            Product engineering, MSP operations, security assurance, ML, and
+            technical consultation — focused delivery without fluff.
+          </p>
+        </header>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6"
+        >
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-code text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">Custom software development</h3>
+            <p class="service-card-pro-desc">
+              Bespoke web, mobile, and desktop solutions shaped around your
+              workflows, integrations, and timelines — not generic templates.
+            </p>
+            <a
+              href="#contact"
+              class="service-card-pro-cta service-card-pro-cta--contact"
+              data-section="contact"
+              >Contact now</a
+            >
+          </article>
+
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-server text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">MSP &amp; IT operations</h3>
+            <p class="service-card-pro-desc">
+              Managed service coverage for day-to-day IT: monitoring, endpoints,
+              backlog hygiene, and pragmatic escalation paths your team can rely
+              on.
+            </p>
+            <a
+              href="#contact"
+              class="service-card-pro-cta service-card-pro-cta--contact"
+              data-section="contact"
+              >Contact now</a
+            >
+          </article>
+
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-shield text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">
+              Security questionnaires &amp; vendor assurance
+            </h3>
+            <p class="service-card-pro-desc">
+              Structured responses for customer and third-party security reviews:
+              clarity, evidence mapping, and fewer back-and-forth cycles.
+            </p>
+            <a
+              href="#contact"
+              class="service-card-pro-cta service-card-pro-cta--contact"
+              data-section="contact"
+              >Contact now</a
+            >
+          </article>
+
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-cogs text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">
+              Machine learning &amp; AI solutions
+            </h3>
+            <p class="service-card-pro-desc">
+              Practical ML pipelines and intelligent features where they
+              actually reduce manual work — not hype without a metric.
+            </p>
+            <a
+              href="#contact"
+              class="service-card-pro-cta service-card-pro-cta--contact"
+              data-section="contact"
+              >Contact now</a
+            >
+          </article>
+
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-paint-brush text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">Full UI design</h3>
+            <p class="service-card-pro-desc">
+              End-to-end interface design: flows, components, and visual polish for
+              web and product — from discovery to handoff-ready specs.
+            </p>
+            <div class="service-card-pro-portfolio">
+              <a
+                href="https://www.behance.net/ishan-shrestha"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="service-card-pro-portfolio-link"
+              >
+                <i class="fa fa-behance" aria-hidden="true"></i>
+                Behance
+              </a>
+              <span class="service-card-pro-portfolio-sep" aria-hidden="true"
+                >·</span
+              >
+              <a
+                href="https://dribbble.com/ishan5hrestha"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="service-card-pro-portfolio-link service-card-pro-portfolio-link--dribbble"
+              >
+                <i class="fa fa-dribbble" aria-hidden="true"></i>
+                Dribbble
+              </a>
+            </div>
+            <a
+              href="#contact"
+              class="service-card-pro-cta service-card-pro-cta--contact"
+              data-section="contact"
+              >Contact now</a
+            >
+          </article>
+
+          <article class="service-card-pro service-card-pro--flush-cta group">
+            <div class="service-card-pro-icon" aria-hidden="true">
+              <i class="fa fa-code-fork text-blue-200 text-xl"></i>
+            </div>
+            <h3 class="service-card-pro-title">Technical consultation</h3>
+            <p class="service-card-pro-desc">
+              Architecture reviews, vendor shortlists, and roadmap sanity checks
+              when you need a second experienced opinion before you commit.
+            </p>
+            <a
+              href="https://calendly.com/ishanshrestha/consultation"
+              data-book-call="true"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="service-card-pro-cta service-card-pro-cta--consultation"
+            >
+              Book a consultation
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional experience — aligned with resume (Apr 2026) -->
+    <section id="experience" class="section">
+      <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 md:mb-10 border-b border-slate-700/50 pb-8">
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-white tracking-tight"
+          >
+            Professional Experience
+          </h2>
+          <p class="mt-3 text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl">
+            Software engineer with 6+ years across SaaS products, AI integration,
+            GRC, and full-stack delivery — product building, security questionnaires,
+            and automation.
+          </p>
+        </header>
+
+        <div
+          class="experience-timeline border-l border-slate-600/40 ml-[6px] md:ml-2 pl-7 md:pl-9"
+        >
+          <div class="space-y-0">
+            <!-- HeyGen -->
+            <article class="experience-node relative pb-12 md:pb-14">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div class="exp-entry-logo-frame">
+                    <img
+                      src="/assets/logo/heygen.png"
+                      alt="HeyGen"
+                      class="exp-entry-logo"
+                      width="112"
+                      height="112"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Security Analyst <span class="text-slate-500 font-normal">|</span> GRC Manager
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">
+                          <a
+                            href="https://www.heygen.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="exp-company-link text-blue-400 hover:text-blue-300"
+                            >HeyGen</a
+                          >
+                        </p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Mar 2024 — Apr 2026
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>
+                    Oversee and continuously improve the company&apos;s GRC posture,
+                    driving higher compliance standards.
+                  </li>
+                  <li>
+                    Helped develop a questionnaire automation product for security
+                    workflows.
+                  </li>
+                  <li>
+                    Collaborate with Sales on client vendor assessment questionnaires
+                    and diligence.
+                  </li>
+                  <li>
+                    Monitor the company&apos;s security ratings and vulnerability
+                    exposure on VRM platforms.
+                  </li>
+                  <li>
+                    Clarify security posture and controls for HeyGen&apos;s enterprise
+                    customers.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">Drata</li>
+                  <li class="exp-tag">OneTrust</li>
+                  <li class="exp-tag">RAG</li>
+                  <li class="exp-tag">Node.js</li>
+                  <li class="exp-tag">SOC 2</li>
+                  <li class="exp-tag">ISO 27001</li>
+                  <li class="exp-tag">GDPR</li>
+                  <li class="exp-tag">GRC</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Arnifi -->
+            <article class="experience-node relative pb-12 md:pb-14">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div class="exp-entry-logo-frame">
+                    <img
+                      src="/assets/logo/arnifi.svg"
+                      alt="Arnifi"
+                      class="exp-entry-logo"
+                      width="120"
+                      height="48"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Software Engineer <span class="text-slate-500 font-normal">|</span> AI Consultant
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">
+                          <a
+                            href="https://arnifi.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="exp-company-link text-blue-400 hover:text-blue-300"
+                            >Arnifi</a
+                          >
+                        </p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Jan 2024 — Apr 2025
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>
+                    Built a RAG chatbot with a custom knowledge base grounded in
+                    company blog content.
+                  </li>
+                  <li>
+                    Cut answer latency from the knowledge base by ~40% by summarizing
+                    source material before embedding.
+                  </li>
+                  <li>
+                    Shipped a multi-country business setup cost calculator for the
+                    Middle East, improving on-site engagement.
+                  </li>
+                  <li>
+                    Provided technical deconstruction and consulting on when and how
+                    to use AI for new product ideas.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">FastAPI</li>
+                  <li class="exp-tag">LangChain</li>
+                  <li class="exp-tag">RAG</li>
+                  <li class="exp-tag">Embeddings</li>
+                  <li class="exp-tag">OpenAI API</li>
+                  <li class="exp-tag">Next.js</li>
+                  <li class="exp-tag">Strapi</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Laliguras GmbH -->
+            <article class="experience-node relative pb-12 md:pb-14">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div class="exp-entry-logo-frame">
+                    <img
+                      src="/assets/logo/laliguras_logo.svg"
+                      alt="Laliguras GmbH"
+                      class="exp-entry-logo"
+                      width="120"
+                      height="60"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Full Stack Engineer <span class="text-slate-500 font-normal">/</span> Tech Lead
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">
+                          <a
+                            href="https://laliguras.de"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="exp-company-link text-blue-400 hover:text-blue-300"
+                            >Laliguras GmbH</a
+                          >
+                        </p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Apr 2023 — Dec 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>
+                    Built a trek-planning platform from scratch connecting hikers,
+                    guides, and lodges along routes.
+                  </li>
+                  <li>
+                    Established CI/CD for fast, reliable deploys to staging and
+                    production.
+                  </li>
+                  <li>
+                    Mentored teams on software and architecture best practices.
+                  </li>
+                  <li>
+                    Bridged communication between engineering and business stakeholders.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">Next.js</li>
+                  <li class="exp-tag">Express.js</li>
+                  <li class="exp-tag">AWS</li>
+                  <li class="exp-tag">cPanel</li>
+                  <li class="exp-tag">MongoDB</li>
+                  <li class="exp-tag">Firebase</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- LIS Nepal -->
+            <article class="experience-node relative pb-12 md:pb-14">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div class="exp-entry-logo-frame">
+                    <img
+                      src="/assets/logo/lis_nepal.png"
+                      alt="LIS Nepal"
+                      class="exp-entry-logo"
+                      width="120"
+                      height="72"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Software Engineer
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">
+                          <a
+                            href="https://lisnepal.com.np"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="exp-company-link text-blue-400 hover:text-blue-300"
+                            >LIS Nepal Pvt. Ltd.</a
+                          >
+                        </p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Mar 2023 — Jul 2023 · 5 mos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>
+                    Data engineering for product features and Robling
+                    implementation.
+                  </li>
+                  <li>ETL and reconciliation scripts across initiatives.</li>
+                  <li>
+                    Automated data validation previously done manually by a team,
+                    reducing effort and time by roughly 36×.
+                  </li>
+                  <li>
+                    Code consolidation and documentation tooling on Wagtail CMS.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">Snowflake</li>
+                  <li class="exp-tag">Wagtail CMS</li>
+                  <li class="exp-tag">Azure Data Factory</li>
+                  <li class="exp-tag">Power BI</li>
+                  <li class="exp-tag">NumPy</li>
+                  <li class="exp-tag">ETL</li>
+                  <li class="exp-tag">Pandas</li>
+                  <li class="exp-tag">Netezza</li>
+                  <li class="exp-tag">Amazon S3</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Hitachi Energy -->
+            <article class="experience-node relative pb-12 md:pb-14">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div class="exp-entry-logo-frame">
+                    <img
+                      src="/assets/logo/hitachi_logo_2025.svg"
+                      alt="Hitachi Energy"
+                      class="exp-entry-logo"
+                      width="120"
+                      height="32"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Associate Software Engineer
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">
+                          <a
+                            href="https://hitachienergy.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="exp-company-link text-blue-400 hover:text-blue-300"
+                            >Hitachi Energy</a
+                          >
+                        </p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Jan 2022 — Feb 2023 · 1 yr 2 mos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>
+                    SQL and stored procedures for complex database workloads;
+                    debugging and optimization.
+                  </li>
+                  <li>SQL Server Agent automation; Profiler and Extended Events.</li>
+                  <li>
+                    Postman collections for testing; TRMTracker 6.0 feature work;
+                    HRMS fixes and enhancements.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">T-SQL</li>
+                  <li class="exp-tag">Power BI</li>
+                  <li class="exp-tag">CTRM</li>
+                  <li class="exp-tag">PHP</li>
+                  <li class="exp-tag">Postman</li>
+                  <li class="exp-tag">ETRM</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Freelance -->
+            <article class="experience-node relative pb-0">
+              <span
+                class="experience-node-dot absolute top-2.5 -left-[22px] md:-left-[26px] h-2 w-2 rounded-full bg-slate-400 ring-4 ring-[#121212]"
+                aria-hidden="true"
+              ></span>
+              <div class="exp-entry-card">
+                <div class="exp-entry-header">
+                  <div
+                    class="exp-entry-logo-frame exp-entry-logo-frame--icon"
+                    aria-hidden="true"
+                  >
+                    <i class="fa fa-briefcase exp-entry-logo-icon" aria-hidden="true"></i>
+                  </div>
+                  <div class="exp-entry-header-body">
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div>
+                        <h3 class="text-lg font-semibold text-white">
+                          Freelance Web Developer
+                        </h3>
+                        <p class="text-sm text-slate-300 mt-0.5">Freelance</p>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-500 tabular-nums shrink-0">
+                        Jan 2020 — May 2021 · 1 yr 5 mos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>Survey site on Firebase and client-facing delivery.</li>
+                  <li>
+                    Frontend structure and data presentation; cross-device UI
+                    support.
+                  </li>
+                  <li>
+                    Production support: backups and issue resolution.
+                  </li>
+                </ul>
+                <ul class="mt-5 flex flex-wrap gap-2 list-none p-0">
+                  <li class="exp-tag">Firebase</li>
+                  <li class="exp-tag">JavaScript</li>
+                  <li class="exp-tag">Postman</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun: pick 3D (ArtStation) or games (itch.io grid) -->
+    <section id="funstuff" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="relative w-full max-w-6xl mx-auto px-4 py-10 md:py-12">
+        <header
+          class="mb-8 md:mb-10 pb-8 border-b border-slate-700/50 text-center md:text-left"
+        >
+          <h2
+            class="text-2xl md:text-3xl font-bold tracking-tight embossed-text"
+          >
+            Fun stuff
+          </h2>
+          <div
+            class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-3 mb-3"
+          ></div>
+          <p
+            class="text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-0"
+          >
+            Side projects: 3D art on ArtStation and small games on itch.io.
+          </p>
+        </header>
+
+        <!-- Two primary tracks: 3D (link) · Games (expand) -->
+        <div class="fun-hero-grid">
+          <a
+            href="https://www.artstation.com/mutton"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fun-hero-tile fun-hero-tile--3d group"
+            aria-label="3D modelling — open ArtStation portfolio"
+          >
+            <div class="fun-hero-tile__media">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/037/202/421/large/ishan-shrestha-earth.jpg?1619756580"
+                alt=""
+                width="640"
+                height="360"
+                class="fun-hero-tile__img"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="fun-hero-tile__badge" aria-hidden="true">
+                <i class="fa fa-external-link"></i>
+              </span>
+            </div>
+            <div class="fun-hero-tile__body">
+              <div class="fun-hero-tile__kicker">Portfolio</div>
+              <h3 class="fun-hero-tile__title">3D modelling</h3>
+              <p class="fun-hero-tile__desc">
+                Renders and WIP on ArtStation — opens in a new tab.
+              </p>
+            </div>
+          </a>
+
+          <button
+            type="button"
+            id="fun-games-toggle"
+            class="fun-hero-tile fun-hero-tile--games"
+            aria-expanded="false"
+            aria-controls="fun-games-panel"
+          >
+            <div class="fun-hero-tile__media fun-hero-tile__media--games">
+              <div class="fun-hero-tile__games-icon-wrap" aria-hidden="true">
+                <i class="fa fa-gamepad fun-hero-tile__games-icon"></i>
+              </div>
+            </div>
+            <div class="fun-hero-tile__body">
+              <div class="fun-hero-tile__kicker">itch.io · Makalu</div>
+              <h3 class="fun-hero-tile__title">Game making</h3>
+              <p class="fun-hero-tile__desc">
+                Six playable prototypes — click to show the list, then open any
+                title.
+              </p>
+              <span class="fun-hero-tile__hint">
+                <span id="fun-games-hint-text">Show games</span>
+                <i
+                  class="fa fa-chevron-down fun-hero-tile__chevron"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </div>
+          </button>
+        </div>
+
+        <div id="fun-games-panel" class="fun-games-panel" hidden>
+          <div class="fun-games-panel__head">
+            <h3 class="fun-games-panel__title">
+              <i class="fa fa-gamepad text-blue-400 mr-2" aria-hidden="true"></i>
+              Games
+            </h3>
+            <p class="fun-games-panel__sub">
+              Each card links to
+              <a
+                href="https://300.itch.io/"
+                class="text-blue-400 hover:text-blue-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                >300.itch.io</a
+              >.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6"
+          >
+            <!-- Each card is one link (URLs from 300.itch.io) -->
+            <a
+              href="https://300.itch.io/tower-defense-quiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Tower Defense Quiz on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-blue-950"
+              >
+                <i
+                  class="fa fa-crosshairs text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Action · Browser</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Tower Defense Quiz</h4>
+                <p class="github-repo-desc">
+                  Answer correctly to defend — quiz-meets-tower-defense in the
+                  browser.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/gurkhaxtreme"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open GurkhaXtreme on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-indigo-950"
+              >
+                <i
+                  class="fa fa-rocket text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Platformer</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">GurkhaXtreme</h4>
+                <p class="github-repo-desc">
+                  Update of Gurkha with streamlined controls (no mouse control).
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/dont-loose-control"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Dont Loose Control on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-cyan-950"
+              >
+                <i
+                  class="fa fa-globe text-4xl text-blue-500/35"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Rover</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Dont Loose Control</h4>
+                <p class="github-repo-desc">
+                  Pilot a rover across different planets — keep it under control.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/gurkha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open GURKHA on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-900 via-[#0f172a] to-slate-900"
+              >
+                <i
+                  class="fa fa-bolt text-4xl text-amber-500/30"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Action</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">GURKHA</h4>
+                <p class="github-repo-desc">
+                  Gurkha fighting jellyfish — fast arcade action.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/deep-space"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Deep Space on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-[#0a0f1a] via-[#0f172a] to-slate-950"
+              >
+                <i
+                  class="fa fa-star text-4xl text-sky-400/25"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Arcade</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Deep Space</h4>
+                <p class="github-repo-desc">
+                  Another Makalu release on itch.io — play on the project page.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://300.itch.io/achtung-panzer"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-repo-card group"
+              aria-label="Open Achtung Panzer on itch.io"
+            >
+              <div
+                class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-stone-950 via-[#1c1917] to-slate-900"
+              >
+                <i
+                  class="fa fa-shield text-4xl text-slate-500/40"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="github-repo-body">
+                <div class="github-repo-meta">
+                  <span class="github-lang">Shooter · WW2</span>
+                  <span class="github-stars--muted">itch.io</span>
+                </div>
+                <h4 class="github-repo-title">Achtung Panzer</h4>
+                <p class="github-repo-desc">
+                  Top-down tank shooter set in World War II.
+                </p>
+              </div>
+            </a>
+          </div>        </div>
+      </div>
+    </section>
+
+    <!-- GitHub projects: theme-aligned repo cards -->
+    <section id="github" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="relative w-full max-w-6xl mx-auto px-4 py-10 md:py-12">
+        <header class="mb-10 md:mb-12 pb-8 border-b border-slate-700/50 text-center md:text-left">
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-white tracking-tight"
+          >
+            GitHub
+          </h2>
+          <div
+            class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-3 mb-3"
+          ></div>
+          <p class="text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0">
+            Selected repositories: forecasting, automation, desktop templates, and
+            smaller experiments. Descriptions reflect each repo&apos;s stated
+            purpose on GitHub.
+          </p>
+          <a
+            href="https://github.com/Ishan5hrestha?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 mt-4 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            <i class="fa fa-github" aria-hidden="true"></i>
+            View all repositories
+            <span class="text-slate-500 font-normal" aria-hidden="true"
+              >&rarr;</span
+            >
+          </a>
+        </header>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6"
+        >
+          <!-- Electricity demand (Python, KNN — 5 stars on GitHub) -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/deep-dreams.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">Python</span>
+                <span class="github-stars" title="Stars on GitHub"
+                  ><i class="fa fa-star text-amber-400/90" aria-hidden="true"></i>
+                  5</span
+                >
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/Electricity-Demand-Prediction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Electricity demand prediction</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Short-term load forecasting from historical series using
+                k-nearest neighbours (KNN) to estimate demand for the week ahead.
+              </p>
+            </div>
+          </article>
+
+          <!-- Assistant Bot -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/car-data-scraping.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">Python</span>
+                <span class="github-stars"
+                  ><i class="fa fa-star text-amber-400/90" aria-hidden="true"></i>
+                  3</span
+                >
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/Assistant-Bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Assistant Bot</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Voice-driven assistant that automates local workflows: spinning up
+                Python projects, installing packages, opening apps, with
+                self-modifying behavior as described on the repository.
+              </p>
+            </div>
+          </article>
+
+          <!-- Restaurant / Java + Firebase -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/loan-repayment.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">Java</span>
+                <span class="github-stars"
+                  ><i class="fa fa-star text-amber-400/90" aria-hidden="true"></i>
+                  3</span
+                >
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/Restaurant-Management-System"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Restaurant management system</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Academic minor project: restaurant operations with Firebase-backed
+                data (MIT license on GitHub).
+              </p>
+            </div>
+          </article>
+
+          <!-- Space Invader C++ -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/downing-io.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">C++</span>
+                <span class="github-stars github-stars--muted">—</span>
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/Space-Invader-Engine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Space Invader engine</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Classic arcade-style shooter built in C++ for a computer graphics
+                course: custom engine and game loop.
+              </p>
+            </div>
+          </article>
+
+          <!-- Armory FPS Haxe -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/scrabble.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">Haxe</span>
+                <span class="github-stars"
+                  ><i class="fa fa-star text-amber-400/90" aria-hidden="true"></i>
+                  3</span
+                >
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/ArmoryFPSController"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Armory3D FPS controller</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                First-person controller for Armory 3D: movement and grounding tuned
+                to work across varied terrain (per repository summary).
+              </p>
+            </div>
+          </article>
+
+          <!-- Encryption Diary -->
+          <article class="github-repo-card group">
+            <div class="github-repo-media">
+              <img
+                src="img/portfolio/thumbnails/racket-weather.jpg"
+                alt=""
+                width="400"
+                height="200"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">Python</span>
+                <span class="github-stars"
+                  ><i class="fa fa-star text-amber-400/90" aria-hidden="true"></i>
+                  2</span
+                >
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/Encryption-Diary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Encryption Diary</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Private journal tool using hash-based protection for stored
+                entries (tagline on GitHub: &quot;Hash based encryption&quot;).
+              </p>
+            </div>
+          </article>
+
+          <!-- Next.js + Electron template (fork) -->
+          <article class="github-repo-card group">
+            <div
+              class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950"
+            >
+              <span class="text-4xl text-blue-400/40" aria-hidden="true"
+                ><i class="fa fa-desktop"></i
+              ></span>
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">TypeScript</span>
+                <span class="github-repo-badge">Fork</span>
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/nextjs_approuter_electron"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >Next.js App Router + Electron</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Template fork for desktop apps combining Electron with Next.js App
+                Router, SSR, and Server Components (upstream-maintained stack;
+                handy for cross-platform product shells).
+              </p>
+            </div>
+          </article>
+
+          <!-- CV generator frontend -->
+          <article class="github-repo-card group">
+            <div
+              class="github-repo-media github-repo-media--placeholder flex items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950"
+            >
+              <span class="text-4xl text-indigo-400/40" aria-hidden="true"
+                ><i class="fa fa-file-text-o"></i
+              ></span>
+            </div>
+            <div class="github-repo-body">
+              <div class="github-repo-meta">
+                <span class="github-lang">JavaScript</span>
+                <span class="github-stars github-stars--muted">—</span>
+              </div>
+              <h3 class="github-repo-title">
+                <a
+                  href="https://github.com/Ishan5hrestha/cv-generator-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github-repo-link"
+                  >CV generator (frontend)</a
+                >
+              </h3>
+              <p class="github-repo-desc">
+                Client-side UI for building and editing résumé / CV output;
+                pairs with a generator workflow (JavaScript stack on GitHub).
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional work: portfolio highlights (neuralevo.com/portfolio) -->
+    <section id="projects" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div class="relative w-full max-w-6xl mx-auto px-4 py-10 md:py-12">
+        <header
+          class="mb-10 md:mb-12 pb-8 border-b border-slate-700/50 text-center md:text-left"
+        >
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-white tracking-tight"
+          >
+            Projects
+          </h2>
+          <div
+            class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-3 mb-3"
+          ></div>
+          <p
+            class="text-sm md:text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0"
+          >
+            Product and platform work across AI, simulation software, EdTech,
+            healthcare, and security — from live demos to in-house products. For
+            full case context see
+            <a
+              href="https://neuralevo.com/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 font-medium"
+              >neuralevo.com/portfolio</a
+            >.
+          </p>
+        </header>
+
+        <div class="projects-stack space-y-10 md:space-y-14">
+          <!-- Voice Over Kids AI -->
+          <article
+            class="project-panel"
+            aria-labelledby="project-title-vok"
+          >
+            <div class="project-panel-intro">
+              <a
+                href="https://app.voiceoverkids.agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-panel-preview"
+                aria-label="Open live demo: Voice Over Kids AI (opens in new tab)"
+              >
+                <span class="project-panel-preview__frame">
+                  <img
+                    src="/assets/images/voice_over_kids.png"
+                    alt=""
+                    class="project-panel-preview__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  >
+                </span>
+                <span class="project-panel-preview__overlay">
+                  <span class="project-panel-preview__cta">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    Live demo
+                  </span>
+                </span>
+              </a>
+              <div class="project-panel-head">
+                <div class="project-panel-meta">
+                  <span class="project-cat-pill">AI platform</span>
+                </div>
+                <h3 id="project-title-vok" class="project-panel-title">
+                  Voice Over Kids AI
+                </h3>
+                <p class="project-panel-lead">
+                  AI-powered platform for studio-quality children&apos;s voiceovers
+                  using advanced voice models — shrinking production from days to
+                  minutes while keeping broadcast-ready output.
+                </p>
+              </div>
+            </div>
+            <div class="project-panel-grid">
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Target users</h4>
+                <p class="project-body">
+                  Content creators, advertising agencies, e-learning platforms,
+                  and media production companies.
+                </p>
+                <h4 class="project-subhead">Key impact</h4>
+                <p class="project-body">
+                  ~90% lower production costs, ~10&times; faster delivery,
+                  consistent quality across outputs.
+                </p>
+              </div>
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Technical implementation</h4>
+                <ul class="project-tech-list">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Python</li>
+                  <li>TensorFlow</li>
+                  <li>AWS Lambda</li>
+                  <li>WebRTC</li>
+                  <li>FFmpeg</li>
+                </ul>
+                <h4 class="project-subhead">Core features</h4>
+                <ul class="project-bullet-list">
+                  <li>Real-time AI voice generation</li>
+                  <li>Multiple child voice personas</li>
+                  <li>Custom script processing</li>
+                  <li>Audio quality optimization</li>
+                  <li>Batch processing</li>
+                  <li>API integration</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="project-metrics" aria-label="Project results for Voice Over Kids AI">
+              <li>
+                <span class="project-metric-val">400+</span>
+                <span class="project-metric-lbl">Active users</span>
+              </li>
+              <li>
+                <span class="project-metric-val">90%</span>
+                <span class="project-metric-lbl">Cost reduction</span>
+              </li>
+              <li>
+                <span class="project-metric-val">10&times;</span>
+                <span class="project-metric-lbl">Faster production</span>
+              </li>
+              <li>
+                <span class="project-metric-val">4.9/5</span>
+                <span class="project-metric-lbl">User rating</span>
+              </li>
+            </ul>
+            <figure class="project-testimonial">
+              <blockquote class="project-quote">
+                We worked with Neural Evo for an AI API and end-user interface,
+                admin tooling, and payments. Excellent execution and support.
+              </blockquote>
+              <figcaption class="project-quote-cite">
+                &mdash; Zeno Groenewegen, Casting Director, Voice Over Kids
+              </figcaption>
+            </figure>
+            <div class="project-actions">
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-primary"
+                data-project-name="Voice Over Kids AI"
+                data-demo-url="https://app.voiceoverkids.agency/"
+                data-inquiry-type="quote"
+              >
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+                Request a quote
+              </button>
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-secondary"
+                data-project-name="Voice Over Kids AI"
+                data-demo-url="https://app.voiceoverkids.agency/"
+                data-inquiry-type="question"
+              >
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Ask a question
+              </button>
+            </div>
+          </article>
+
+          <!-- FS2Crew -->
+          <article class="project-panel" aria-labelledby="project-title-fs2">
+            <div class="project-panel-intro">
+              <a
+                href="https://fs2crew.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-panel-preview"
+                aria-label="Open live demo: FS2Crew Product Manager (opens in new tab)"
+              >
+                <span class="project-panel-preview__frame">
+                  <img
+                    src="/assets/images/fs2crew.png"
+                    alt=""
+                    class="project-panel-preview__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  >
+                </span>
+                <span class="project-panel-preview__overlay">
+                  <span class="project-panel-preview__cta">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    Live demo
+                  </span>
+                </span>
+              </a>
+              <div class="project-panel-head">
+                <div class="project-panel-meta">
+                  <span class="project-cat-pill">Gaming software</span>
+                </div>
+                <h3 id="project-title-fs2" class="project-panel-title">
+                  FS2Crew Product Manager
+                </h3>
+                <p class="project-panel-lead">
+                  Product management system for Microsoft Flight Simulator add-ons:
+                  simpler installs, dependable updates, and fewer version conflicts.
+                </p>
+              </div>
+            </div>
+            <div class="project-panel-grid">
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Target users</h4>
+                <p class="project-body">
+                  Flight simulation enthusiasts, community mod users, and
+                  add-on developers.
+                </p>
+                <h4 class="project-subhead">Key impact</h4>
+                <p class="project-body">
+                  ~85% less setup friction, ~99% install success, reduced
+                  dependency and version clashes.
+                </p>
+              </div>
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Technical implementation</h4>
+                <ul class="project-tech-list">
+                  <li>Electron</li>
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>SQLite</li>
+                  <li>C++</li>
+                  <li>Windows API</li>
+                  <li>Auto-updater</li>
+                </ul>
+                <h4 class="project-subhead">Core features</h4>
+                <ul class="project-bullet-list">
+                  <li>One-click mod installation</li>
+                  <li>Automatic dependency resolution</li>
+                  <li>Version conflict handling</li>
+                  <li>Backup and restore</li>
+                  <li>Performance monitoring</li>
+                  <li>Community integration</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="project-metrics" aria-label="Project results for FS2Crew Product Manager">
+              <li>
+                <span class="project-metric-val">50K+</span>
+                <span class="project-metric-lbl">Downloads</span>
+              </li>
+              <li>
+                <span class="project-metric-val">15K+</span>
+                <span class="project-metric-lbl">Active users</span>
+              </li>
+              <li>
+                <span class="project-metric-val">85%</span>
+                <span class="project-metric-lbl">Time saved</span>
+              </li>
+              <li>
+                <span class="project-metric-val">4.8/5</span>
+                <span class="project-metric-lbl">Community rating</span>
+              </li>
+            </ul>
+            <div class="project-actions">
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-primary"
+                data-project-name="FS2Crew Product Manager"
+                data-demo-url="https://fs2crew.com/"
+                data-inquiry-type="quote"
+              >
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+                Request a quote
+              </button>
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-secondary"
+                data-project-name="FS2Crew Product Manager"
+                data-demo-url="https://fs2crew.com/"
+                data-inquiry-type="question"
+              >
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Ask a question
+              </button>
+            </div>
+          </article>
+
+          <!-- Seamless Learn -->
+          <article class="project-panel" aria-labelledby="project-title-seam">
+            <div class="project-panel-intro">
+              <a
+                href="https://app.seaml.es/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-panel-preview"
+                aria-label="Open live demo: Seamless Learn (opens in new tab)"
+              >
+                <span class="project-panel-preview__frame">
+                  <img
+                    src="/assets/images/seamlessLearn.png"
+                    alt=""
+                    class="project-panel-preview__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  >
+                </span>
+                <span class="project-panel-preview__overlay">
+                  <span class="project-panel-preview__cta">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    Live demo
+                  </span>
+                </span>
+              </a>
+              <div class="project-panel-head">
+                <div class="project-panel-meta">
+                  <span class="project-cat-pill">AI EdTech</span>
+                </div>
+                <h3 id="project-title-seam" class="project-panel-title">
+                  Seamless Learn
+                </h3>
+                <p class="project-panel-lead">
+                  Research and learning copilot: literature reviews, podcasts from
+                  papers, scholarship and grant discovery, and application drafting
+                  — tuned for serious academic workflows.
+                </p>
+              </div>
+            </div>
+            <div class="project-panel-grid">
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Target users</h4>
+                <p class="project-body">
+                  Students, researchers, PhD candidates, grant writers, and
+                  institutions.
+                </p>
+                <h4 class="project-subhead">Key impact</h4>
+                <p class="project-body">
+                  20K+ active users, strong MRR, ~75% time saved in research flows,
+                  large gains in literature-review depth and speed.
+                </p>
+              </div>
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Technical implementation</h4>
+                <ul class="project-tech-list">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Python</li>
+                  <li>OpenAI GPT</li>
+                  <li>NLP</li>
+                  <li>TTS APIs</li>
+                  <li>PostgreSQL</li>
+                  <li>Redis</li>
+                  <li>AWS</li>
+                </ul>
+                <h4 class="project-subhead">Core features</h4>
+                <ul class="project-bullet-list">
+                  <li>AI literature review generation</li>
+                  <li>Research paper to podcast</li>
+                  <li>Scholarship and grant discovery</li>
+                  <li>Essay and application assistant</li>
+                  <li>Citation management</li>
+                  <li>Workflow automation</li>
+                  <li>Audio content generation</li>
+                  <li>Document analysis and summaries</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="project-metrics" aria-label="Project results for Seamless Learn">
+              <li>
+                <span class="project-metric-val">20K+</span>
+                <span class="project-metric-lbl">Active users</span>
+              </li>
+              <li>
+                <span class="project-metric-val">100&times;</span>
+                <span class="project-metric-lbl">ROI (reported)</span>
+              </li>
+              <li>
+                <span class="project-metric-val">75%</span>
+                <span class="project-metric-lbl">Time savings</span>
+              </li>
+              <li>
+                <span class="project-metric-val">4.8/5</span>
+                <span class="project-metric-lbl">Satisfaction</span>
+              </li>
+            </ul>
+            <figure class="project-testimonial">
+              <blockquote class="project-quote">
+                The AI literature reviews are comprehensive and the podcast
+                feature lets me absorb papers on the go — it changed how I work.
+              </blockquote>
+              <figcaption class="project-quote-cite">
+                &mdash; Dr. Sarah Chen, PhD Candidate, Stanford University
+              </figcaption>
+            </figure>
+            <div class="project-actions">
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-primary"
+                data-project-name="Seamless Learn"
+                data-demo-url="https://app.seaml.es/"
+                data-inquiry-type="quote"
+              >
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+                Request a quote
+              </button>
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-secondary"
+                data-project-name="Seamless Learn"
+                data-demo-url="https://app.seaml.es/"
+                data-inquiry-type="question"
+              >
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Ask a question
+              </button>
+            </div>
+          </article>
+
+          <!-- MediX -->
+          <article class="project-panel" aria-labelledby="project-title-medix">
+            <div class="project-panel-intro">
+              <a
+                href="https://medix.neuralevo.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-panel-preview"
+                aria-label="Open live demo: MediX Healthcare System (opens in new tab)"
+              >
+                <span class="project-panel-preview__frame">
+                  <img
+                    src="/assets/images/medix.png"
+                    alt=""
+                    class="project-panel-preview__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  >
+                </span>
+                <span class="project-panel-preview__overlay">
+                  <span class="project-panel-preview__cta">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    Live demo
+                  </span>
+                </span>
+              </a>
+              <div class="project-panel-head">
+                <div class="project-panel-meta">
+                  <span class="project-cat-pill">Healthcare</span>
+                  <span class="project-badge-inhouse">In-house product</span>
+                </div>
+                <h3 id="project-title-medix" class="project-panel-title">
+                  MediX Healthcare System
+                </h3>
+                <p class="project-panel-lead">
+                  Operations hub for pharmacies and clinics: inventory,
+                  prescriptions, patient records, and analytics in one place.
+                </p>
+              </div>
+            </div>
+            <div class="project-panel-grid">
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Target users</h4>
+                <p class="project-body">
+                  Pharmacies, clinics, administrators, and clinical staff.
+                </p>
+                <h4 class="project-subhead">Key impact</h4>
+                <p class="project-body">
+                  ~40% inventory efficiency, 99.9% prescription accuracy target,
+                  ~30% revenue lift for adopters.
+                </p>
+              </div>
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Technical implementation</h4>
+                <ul class="project-tech-list">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>MongoDB</li>
+                  <li>Express</li>
+                  <li>Redis</li>
+                  <li>Stripe API</li>
+                  <li>Chart.js</li>
+                </ul>
+                <h4 class="project-subhead">Core features</h4>
+                <ul class="project-bullet-list">
+                  <li>Real-time inventory</li>
+                  <li>Prescription management</li>
+                  <li>Patient records</li>
+                  <li>Automated reorder alerts</li>
+                  <li>Sales analytics</li>
+                  <li>Compliance reporting</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="project-metrics" aria-label="Project results for MediX Healthcare System">
+              <li>
+                <span class="project-metric-val">50+</span>
+                <span class="project-metric-lbl">Clinics</span>
+              </li>
+              <li>
+                <span class="project-metric-val">99.9%</span>
+                <span class="project-metric-lbl">Accuracy</span>
+              </li>
+              <li>
+                <span class="project-metric-val">40%</span>
+                <span class="project-metric-lbl">Efficiency</span>
+              </li>
+              <li>
+                <span class="project-metric-val">30%</span>
+                <span class="project-metric-lbl">Revenue growth</span>
+              </li>
+            </ul>
+            <figure class="project-testimonial">
+              <blockquote class="project-quote">
+                MediX streamlined our operation — fewer errors and faster service
+                for patients.
+              </blockquote>
+              <figcaption class="project-quote-cite">
+                &mdash; Dr. Maria Rodriguez, Chief Pharmacist
+              </figcaption>
+            </figure>
+            <div class="project-actions">
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-primary"
+                data-project-name="MediX Healthcare System"
+                data-demo-url="https://medix.neuralevo.com/"
+                data-inquiry-type="quote"
+              >
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+                Request a quote
+              </button>
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-secondary"
+                data-project-name="MediX Healthcare System"
+                data-demo-url="https://medix.neuralevo.com/"
+                data-inquiry-type="question"
+              >
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Ask a question
+              </button>
+            </div>
+          </article>
+
+          <!-- Vencurity -->
+          <article class="project-panel" aria-labelledby="project-title-venc">
+            <div class="project-panel-intro">
+              <a
+                href="https://www.vencurity.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-panel-preview"
+                aria-label="Open live demo: Vencurity Security Platform (opens in new tab)"
+              >
+                <span class="project-panel-preview__frame">
+                  <img
+                    src="/assets/images/vencurity.png"
+                    alt=""
+                    class="project-panel-preview__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  >
+                </span>
+                <span class="project-panel-preview__overlay">
+                  <span class="project-panel-preview__cta">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    Live demo
+                  </span>
+                </span>
+              </a>
+              <div class="project-panel-head">
+                <div class="project-panel-meta">
+                  <span class="project-cat-pill">Cybersecurity</span>
+                  <span class="project-badge-inhouse">In-house product</span>
+                </div>
+                <h3 id="project-title-venc" class="project-panel-title">
+                  Vencurity Security Platform
+                </h3>
+                <p class="project-panel-lead">
+                  Vendor security assessments with automated questionnaires, risk
+                  scoring, and compliance tracking for enterprise procurement teams.
+                </p>
+              </div>
+            </div>
+            <div class="project-panel-grid">
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Target users</h4>
+                <p class="project-body">
+                  Enterprise security, compliance, vendor management, and CISO
+                  offices.
+                </p>
+                <h4 class="project-subhead">Key impact</h4>
+                <p class="project-body">
+                  ~80% faster assessments, ~95% compliance improvement vs
+                  ad-hoc spreadsheet workflows.
+                </p>
+              </div>
+              <div class="project-panel-col">
+                <h4 class="project-subhead">Technical implementation</h4>
+                <ul class="project-tech-list">
+                  <li>Vue.js</li>
+                  <li>Django</li>
+                  <li>PostgreSQL</li>
+                  <li>Celery</li>
+                  <li>Docker</li>
+                  <li>AWS</li>
+                  <li>Redis</li>
+                </ul>
+                <h4 class="project-subhead">Core features</h4>
+                <ul class="project-bullet-list">
+                  <li>Automated security assessments</li>
+                  <li>Risk scoring</li>
+                  <li>Compliance dashboards</li>
+                  <li>Vendor portal</li>
+                  <li>Custom reporting</li>
+                  <li>Integration APIs</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="project-metrics" aria-label="Project results for Vencurity Security Platform">
+              <li>
+                <span class="project-metric-val">100+</span>
+                <span class="project-metric-lbl">Enterprise clients</span>
+              </li>
+              <li>
+                <span class="project-metric-val">80%</span>
+                <span class="project-metric-lbl">Time saved</span>
+              </li>
+              <li>
+                <span class="project-metric-val">95%</span>
+                <span class="project-metric-lbl">Compliance lift</span>
+              </li>
+              <li>
+                <span class="project-metric-val">4.7/5</span>
+                <span class="project-metric-lbl">Security rating</span>
+              </li>
+            </ul>
+            <figure class="project-testimonial">
+              <blockquote class="project-quote">
+                Excellent, timely help on a security review — I would recommend
+                Neural Evo for security-related work.
+              </blockquote>
+              <figcaption class="project-quote-cite">
+                &mdash; Craig A, VP Engineering, US-based stealth SaaS
+              </figcaption>
+            </figure>
+            <div class="project-actions">
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-primary"
+                data-project-name="Vencurity Security Platform"
+                data-demo-url="https://www.vencurity.com/"
+                data-inquiry-type="quote"
+              >
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+                Request a quote
+              </button>
+              <button
+                type="button"
+                class="project-inquiry-open btn-project-secondary"
+                data-project-name="Vencurity Security Platform"
+                data-demo-url="https://www.vencurity.com/"
+                data-inquiry-type="question"
+              >
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Ask a question
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <p class="project-footer-credit mt-12 md:mt-14 text-center md:text-left text-xs text-slate-500 leading-relaxed max-w-2xl">
+          Narrative, metrics, and structure reflect public portfolio listings at
+          <a
+            href="https://neuralevo.com/portfolio"
+            class="text-slate-400 hover:text-blue-300"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Neural Evo</a
+          >. Results vary by customer; figures are as presented on the source page
+          at time of import.
+        </p>
+      </div>
+    </section>
+
+    <!-- Modal moved to document.body via JS so it is not clipped by inactive .section -->
+    <div
+      id="project-inquiry-modal"
+      class="project-inquiry-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-inquiry-title"
+      hidden
+    >
+      <div class="project-inquiry-modal__backdrop" data-close-inquiry="true"></div>
+      <div class="project-inquiry-modal__panel">
+        <div class="business-card business-card--contact project-inquiry-card group">
+          <div class="card-artifacts" aria-hidden="true">
+            <div class="card-artifact-mesh"></div>
+            <div class="card-artifact-orb card-artifact-orb--a"></div>
+            <div class="card-artifact-orb card-artifact-orb--b"></div>
+            <div class="card-artifact-orb card-artifact-orb--c"></div>
+            <div class="card-artifact-ring"></div>
+            <span class="card-artifact-shard card-artifact-shard--1"></span>
+            <span class="card-artifact-shard card-artifact-shard--2"></span>
+            <span class="card-artifact-shard card-artifact-shard--3"></span>
+          </div>
+          <div class="card-shine"></div>
+
+          <div class="business-card-body">
+            <button
+              type="button"
+              class="project-inquiry-modal__close"
+              data-close-inquiry="true"
+              aria-label="Close dialog"
+            >
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+
+            <header class="text-center md:text-left pr-8">
+              <h2
+                id="project-inquiry-title"
+                class="text-lg md:text-xl font-bold tracking-tight embossed-text"
+              >
+                Project inquiry
+              </h2>
+              <div
+                class="h-0.5 w-10 md:w-12 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-1.5 mb-3"
+              ></div>
+            </header>
+
+            <div
+              id="project-inquiry-context"
+              class="project-inquiry-context"
+              aria-live="polite"
+            >
+              <!-- Filled by JS: project name, demo link, intent -->
+            </div>
+
+            <form
+              id="project-inquiry-form"
+              class="mt-3 space-y-2.5 md:space-y-3"
+              action="https://formspree.io/f/mzbyqold"
+              method="POST"
+              novalidate
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-x-3">
+                <div>
+                  <label
+                    for="project-inquiry-name"
+                    class="block text-[11px] font-medium text-slate-300 mb-1"
+                    >Name <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="project-inquiry-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="Your name"
+                    class="contact-input w-full rounded-lg px-2.5 py-2 text-xs md:text-sm text-white placeholder-slate-500"
+                    aria-required="true"
+                  >
+                </div>
+                <div>
+                  <label
+                    for="project-inquiry-email"
+                    class="block text-[11px] font-medium text-slate-300 mb-1"
+                    >Email <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="project-inquiry-email"
+                    name="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                    maxlength="254"
+                    placeholder="you@example.com"
+                    class="contact-input w-full rounded-lg px-2.5 py-2 text-xs md:text-sm text-white placeholder-slate-500"
+                    aria-required="true"
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="project-inquiry-message"
+                  class="block text-[11px] font-medium text-slate-300 mb-1"
+                  >Message <span class="text-blue-400">*</span></label
+                >
+                <textarea
+                  id="project-inquiry-message"
+                  name="message"
+                  required
+                  minlength="20"
+                  maxlength="4800"
+                  rows="3"
+                  placeholder="Describe what you need…"
+                  class="contact-input contact-input--message project-inquiry-message-area w-full rounded-lg px-2.5 py-2 text-xs md:text-sm text-white placeholder-slate-500 resize-y"
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <p
+                id="project-inquiry-form-error"
+                class="hidden text-sm text-red-400"
+                role="alert"
+              ></p>
+
+              <input type="hidden" name="_subject" id="project-inquiry-subject" value="Portfolio inquiry" >
+              <input type="hidden" name="_next" value="thanks.html" >
+
+              <button
+                type="submit"
+                class="flex items-center justify-center w-full px-3 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/20"
+              >
+                <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i>
+                <span id="project-inquiry-submit-label">Send message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact: same card shell as home -->
+    <section id="contact" class="section">
+      <div
+        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.3)_0,_#121212_70%)]"
+      ></div>
+
+      <div
+        class="contact-section-frame w-full flex items-center justify-center px-3 py-3 md:py-4 min-h-0"
+      >
+        <div class="business-card business-card--contact group my-1 md:my-2">
+          <div class="card-artifacts" aria-hidden="true">
+            <div class="card-artifact-mesh"></div>
+            <div class="card-artifact-orb card-artifact-orb--a"></div>
+            <div class="card-artifact-orb card-artifact-orb--b"></div>
+            <div class="card-artifact-orb card-artifact-orb--c"></div>
+            <div class="card-artifact-ring"></div>
+            <span class="card-artifact-shard card-artifact-shard--1"></span>
+            <span class="card-artifact-shard card-artifact-shard--2"></span>
+            <span class="card-artifact-shard card-artifact-shard--3"></span>
+          </div>
+          <div class="card-shine"></div>
+
+          <div class="business-card-body">
+            <header class="contact-card-header text-center md:text-left">
+              <h2
+                class="text-2xl md:text-3xl font-bold tracking-tight embossed-text"
+              >
+                Get in touch
+              </h2>
+              <div
+                class="h-0.5 md:h-1 w-12 md:w-16 bg-gradient-to-r from-blue-700 to-blue-400 mx-auto md:mx-0 mt-1.5 md:mt-2 mb-2 md:mb-2.5"
+              ></div>
+              <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
+                Quick note or project idea — fields marked
+                <span class="text-blue-400">*</span> are required.
+              </p>
+            </header>
+
+            <form
+              id="contact-form"
+              class="mt-3 md:mt-4 space-y-3"
+              action="https://formspree.io/f/mzbyqold"
+              method="POST"
+              novalidate
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-x-4">
+                <div class="sm:col-span-1">
+                  <label
+                    for="contact-name"
+                    class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                    >Name <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="Your name"
+                    class="contact-input w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500"
+                    aria-required="true"
+                    aria-describedby="contact-name-hint"
+                  >
+                  <p id="contact-name-hint" class="sr-only">
+                    Name must be between 2 and 120 characters.
+                  </p>
+                </div>
+
+                <div class="sm:col-span-1">
+                  <label
+                    for="contact-email"
+                    class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                    >Email <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                    maxlength="254"
+                    placeholder="you@example.com"
+                    class="contact-input w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500"
+                    aria-required="true"
+                    aria-describedby="contact-email-hint"
+                  >
+                  <p id="contact-email-hint" class="sr-only">
+                    Use a valid email address you check regularly.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="contact-message"
+                  class="block text-sm md:text-base font-medium text-slate-300 mb-1.5"
+                  >Message <span class="text-blue-400">*</span></label
+                >
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  minlength="20"
+                  maxlength="5000"
+                  rows="3"
+                  placeholder="How can I help?"
+                  class="contact-input contact-input--message w-full rounded-lg px-3 py-2.5 text-sm md:text-base text-white placeholder-slate-500 resize-y"
+                  aria-required="true"
+                  aria-describedby="contact-message-hint"
+                ></textarea>
+                <p id="contact-message-hint" class="sr-only">
+                  Message must be at least 20 characters, up to 5000 characters.
+                </p>
+              </div>
+
+              <p
+                id="contact-form-error"
+                class="hidden text-base text-red-400"
+                role="alert"
+              ></p>
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New email from Contact Me Form!"
+              >
+              <input type="hidden" name="_next" value="thanks.html" >
+
+              <button
+                type="submit"
+                class="flex items-center justify-center w-full px-4 py-2.5 md:py-3 text-sm md:text-base font-medium bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg hover:from-blue-600 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/20"
+              >
+                <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i>
+                Send message
+              </button>
+            </form>
+
+            <div class="contact-foot-icons" aria-label="More ways to connect">
+              <div class="contact-foot-icons-row">
+                <a
+                  href="mailto:ishanshrestha@gmail.com"
+                  class="contact-foot-icon-link"
+                  aria-label="Email ishanshrestha@gmail.com"
+                  title="Email"
+                >
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://www.linkedin.com/in/ishanshrestha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                >
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://github.com/Ishan5hrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://www.fiverr.com/ishan498"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link contact-foot-icon-link--fiverr"
+                  aria-label="Fiverr — ishan498"
+                  title="Fiverr"
+                >
+                  fi
+                </a>
+                <span class="contact-foot-icons-sep" aria-hidden="true">|</span>
+                <a
+                  href="https://upwork.com/freelancers/ishanshrestha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-foot-icon-link contact-foot-icon-link--upwork"
+                  aria-label="Upwork — ishanshrestha"
+                  title="Upwork"
+                >
+                  up
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+    <div
+      class="copyright-footer fixed bottom-4 left-0 w-full text-center text-gray-500 text-xs z-30 md:bottom-4 pb-[env(safe-area-inset-bottom,0)] max-md:bottom-[calc(var(--nav-mobile-bar-height)+0.25rem)] pointer-events-none"
+    >
+      Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>
+    </div>
+    </div>
+
     <script src="splash.js" defer></script>
+    <script src="js/homepage.js" defer></script>
   </body>
 </html>

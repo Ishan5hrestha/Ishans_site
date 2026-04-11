@@ -8,7 +8,7 @@
     />
 
     <!-- Custom Title Bar -->
-    <title>Ishan Shrestha</title>
+    <title>Ishan&apos;s Site</title>
 
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
@@ -109,7 +109,7 @@
     <link rel="stylesheet" href="../css/homepage.css" />
 
     <!-- Custom favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
 
     <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -161,40 +161,35 @@
 
   <body class="bg-[#121212]">
     <noscript>
-      <div
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-[#121212] text-gray-300 p-6 text-center"
+      <p
+        style="
+          font-family: system-ui, sans-serif;
+          color: #d1d5db;
+          padding: 2rem;
+          text-align: center;
+        "
       >
-        <p>This portfolio needs JavaScript to load section content.</p>
-      </div>
+        <a href="/" style="color: #60a5fa">Open the home page</a>
+      </p>
     </noscript>
     <script>
-      posthog.capture("site_visit", {
-        property: "value",
-        datetime: new Date().toISOString(),
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      });
+      (function () {
+        if (location.protocol === "http:" || location.protocol === "https:") {
+          if (/(?:^|\/)pages\/homepage\.html$/i.test(location.pathname)) {
+            location.replace("/");
+          }
+        }
+      })();
     </script>
-
-    <!-- Injected from pages/partials/nav.html -->
-    <div id="site-nav" aria-busy="true"></div>
-
-    <!-- Injected from pages/partials/section-*.html (Home, Services, Experience, Fun, GitHub, Projects, Contact) -->
-    <div id="site-sections" aria-busy="true">
-      <p
-        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-500 text-sm z-20 pointer-events-none md:left-[calc(50%+var(--nav-rail-width)/2)]"
-        id="homepage-loading-hint"
-      >
-        Loading&hellip;
-      </p>
-    </div>
-
-    <!-- Copyright Text -->
-    <div
-      class="copyright-footer fixed bottom-4 left-0 w-full text-center text-gray-500 text-xs z-30 md:bottom-4 pb-[env(safe-area-inset-bottom,0)] max-md:bottom-[calc(var(--nav-mobile-bar-height)+0.25rem)] pointer-events-none"
+    <p
+      style="
+        font-family: system-ui, sans-serif;
+        color: #9ca3af;
+        padding: 2rem;
+        text-align: center;
+      "
     >
-      Ishan Shrestha &copy; 2021 - <span id="copyright-year"></span>
-    </div>
-
-    <script src="../js/homepage.js" defer></script>
+      <a href="/" style="color: #60a5fa">Continue to the site</a>
+    </p>
   </body>
 </html>

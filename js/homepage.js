@@ -1,12 +1,43 @@
 /**
  * Loads HTML fragments under pages/partials/ (nav + one file per menu section),
- * then wires section navigation and business-card tilt.
- * Requires serving pages/homepage.html over HTTP(S) so fetch() can load partials.
+ * or uses markup already present in the document (root index.html).
+ * Requires serving over HTTP(S) when fragments are fetched.
  */
 (function () {
   "use strict";
 
   var PARTIAL_BASE = new URL("partials/", window.location.href);
+
+  /**
+   * @returns {boolean}
+   */
+  function hasServerRenderedContent() {
+    var sectionsMount = document.getElementById("site-sections");
+    return Boolean(sectionsMount && sectionsMount.querySelector("section#home"));
+  }
+
+  /**
+   * Moves modals to document.body and clears loading state after fragments exist in the DOM.
+   */
+  function finalizeInjectedFragments() {
+    var navMount = document.getElementById("site-nav");
+    var sectionsMount = document.getElementById("site-sections");
+    /** Dialog must live under body so it is not hidden with inactive `.section`. */
+    var inquiryModal = document.getElementById("project-inquiry-modal");
+    if (inquiryModal && inquiryModal.parentNode !== document.body) {
+      document.body.appendChild(inquiryModal);
+    }
+    var homeVideoModal = document.getElementById("home-video-modal");
+    if (homeVideoModal && homeVideoModal.parentNode !== document.body) {
+      document.body.appendChild(homeVideoModal);
+    }
+    if (navMount) {
+      navMount.removeAttribute("aria-busy");
+    }
+    if (sectionsMount) {
+      sectionsMount.removeAttribute("aria-busy");
+    }
+  }
 
   /**
    * Fetches a single HTML fragment from the partials directory.
@@ -24,7 +55,8 @@
   }
 
   /**
-   * Injects nav + all sections into mount points (keeps page shell small).
+   * Injects nav + all sections into mount points (keeps page shell small),
+   * unless the root document already inlined those partials.
    * @returns {Promise<void>}
    */
   function loadHomepageFragments() {
@@ -32,6 +64,11 @@
     var sectionsMount = document.getElementById("site-sections");
     if (!navMount || !sectionsMount) {
       throw new Error("Mount elements #site-nav or #site-sections are missing.");
+    }
+
+    if (hasServerRenderedContent()) {
+      finalizeInjectedFragments();
+      return Promise.resolve();
     }
 
     return Promise.all([
@@ -53,17 +90,7 @@
         parts[5] +
         parts[6] +
         parts[7];
-      /** Dialog must live under body so it is not hidden with inactive `.section`. */
-      var inquiryModal = document.getElementById("project-inquiry-modal");
-      if (inquiryModal && inquiryModal.parentNode !== document.body) {
-        document.body.appendChild(inquiryModal);
-      }
-      var homeVideoModal = document.getElementById("home-video-modal");
-      if (homeVideoModal && homeVideoModal.parentNode !== document.body) {
-        document.body.appendChild(homeVideoModal);
-      }
-      navMount.removeAttribute("aria-busy");
-      sectionsMount.removeAttribute("aria-busy");
+      finalizeInjectedFragments();
     });
   }
 
@@ -673,7 +700,7 @@
    * @returns {void}
    */
   function initFiverrReviewToasts() {
-    var reviewsUrl = new URL("../js/fiverr-reviews.json", window.location.href);
+    var reviewsUrl = new URL("/js/fiverr-reviews.json", window.location.origin);
     var hideMs = 9000;
     var hideTransitionMs = 380;
 
@@ -884,6 +911,28 @@
   }
 
   /**
+   * Sends the PostHog event when the user clicks Book a Call / consultation (Calendly).
+   */
+  function initBookCallAnalytics() {
+    var links = document.querySelectorAll("a[data-book-call]");
+    Array.prototype.forEach.call(links, function (anchor) {
+      anchor.addEventListener("click", function () {
+        if (
+          typeof window.posthog !== "undefined" &&
+          window.posthog &&
+          typeof window.posthog.capture === "function"
+        ) {
+          window.posthog.capture("site_visit", {
+            property: "value",
+            datetime: new Date().toISOString(),
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          });
+        }
+      });
+    });
+  }
+
+  /**
    * Binds all interactive behavior after fragments are in the DOM.
    */
   function initHomepage() {
@@ -984,6 +1033,7 @@
     initHomeVideoModal();
     initFunGamesPanel();
     initFiverrReviewToasts();
+    initBookCallAnalytics();
 
     if (typeof window.tailwind !== "undefined") {
       var refresh = window.tailwind.refresh;

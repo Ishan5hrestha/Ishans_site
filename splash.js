@@ -1,8 +1,8 @@
 /**
- * Minimal splash: connecting message, rotating technical terms, ~5s then homepage.
+ * Minimal splash: connecting message, rotating technical terms, ~5s then reveals portfolio.
  * Runs after DOMContentLoaded so #splash-root / #splash-word exist even if a host
  * or CDN serves this script early/async (otherwise getElementById is null and we
- * would redirect immediately).
+ * would remove the splash immediately).
  */
 (function () {
   "use strict";
@@ -56,20 +56,21 @@
   }
 
   /**
-   * Resolves homepage URL from current splash URL (correct for subpaths and CDNs).
-   * @returns {string}
+   * Removes splash overlay so the portfolio layer is visible (no navigation).
+   * @param {HTMLElement} root
    */
-  function homepageHref() {
-    return new URL("pages/homepage.html", window.location.href).href;
+  function removeSplash(root) {
+    if (root && root.parentNode) {
+      root.parentNode.removeChild(root);
+    }
   }
 
   function startSplash() {
     var root = document.getElementById("splash-root");
     var wordEl = document.getElementById("splash-word");
-    var homeHref = homepageHref();
 
     if (!root || !wordEl) {
-      window.location.href = homeHref;
+      removeSplash(root || null);
       return;
     }
 
@@ -100,7 +101,7 @@
     function finish() {
       root.classList.add("splash--exit");
       window.setTimeout(function () {
-        window.location.href = homeHref;
+        removeSplash(root);
       }, EXIT_TRANSITION_MS);
     }
 
