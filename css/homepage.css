@@ -464,6 +464,50 @@ body.has-news-banner .section:not(#home) {
   transform: perspective(1000px);
 }
 
+/*
+ * Laptop / short viewport height: the home card is vertically centered in 100vh;
+ * trim padding and internal rhythm slightly so the card is not clipped on
+ * common laptop panels (768px+ wide, modest height). Phones stay on the
+ * max-width: 767px rules below.
+ */
+@media (min-width: 768px) and (max-height: 920px) {
+  #home > .home-section-inner {
+    padding-top: max(0.4375rem, env(safe-area-inset-top));
+  }
+
+  #home .business-card {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    padding-left: 1.8125rem;
+    padding-right: 1.8125rem;
+  }
+
+  #home .warhammer-quote {
+    padding: 0.6875rem 0.8125rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  #home .business-card-body > div:first-child {
+    margin-bottom: 0.9375rem;
+  }
+
+  #home .business-card-body > div:nth-child(2) {
+    margin-bottom: 0.9375rem;
+  }
+
+  #home .home-card-contact-links {
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
+  }
+
+  #home .business-card .home-card-action-primary,
+  #home .business-card .home-card-action-secondary {
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
+  }
+}
+
 /* Compact home card on small viewports: less padding, tighter type */
 @media (max-width: 767px) {
   .business-card {
